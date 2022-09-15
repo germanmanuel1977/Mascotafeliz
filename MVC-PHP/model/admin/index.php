@@ -69,9 +69,9 @@ if(isset($_POST['btncerrar']))
                 </li>
     
                 <li>
-                    <a href="#">
+                    <a href="usuarios.php">
                         <img src="img/ejecucion.png" alt="" class="imagen">
-                        <span class="text-item">OPCION 2</span>
+                        <span class="text-item">Crear usuarios</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
