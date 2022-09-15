@@ -17,26 +17,27 @@ if($_POST["inicio"]){
 			
 		$_SESSION['id_user'] = $fila['idpersona']; 
 		$_SESSION['nombres'] = $fila['nombres']; 
-		$_SESSION['apellidos'] = $fila['apellidos']; 
+		$_SESSION['nombres'] = $fila['apellidos']; 
 		$_SESSION['tipo'] = $fila['idtipousua'];
 		$_SESSION['usuario'] = $fila['idpersona'];
 		
 				/// dependiendo del tipo de usuario lo redireccinamos a una pagina
-		/// si es un client
+		/// si es un administrador
 		if($_SESSION['tipo'] == 1){
-			header("Location: ../model/admin/index1.php"); 
+			header("Location: ../model/admin/index.php"); 
 			exit();
 		}
-		/// si es un vendedor
+		/// si es un veterinario
 		elseif($_SESSION['tipo'] == 2){
 			header("Location: ../model/funcionario/index1.php"); 
 			exit();		
 		}
-		/// si es un vendedor
-		elseif($_SESSION['tipo'] == 3){
+		/// si es un propietario
+		if($_SESSION['tipo'] == 3){
 			header("Location: ../model/propietario/index1.php"); 
-			exit();		
-		}		
+			exit();
+		}
+		
 		
 		
 	}else{

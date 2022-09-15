@@ -29,8 +29,9 @@ if($_POST["inicio"])
 {
 	// inicia sesion para los usuarios
 	$doc = $_POST["doc"];
-	$email = $_POST["email"];
-	$sql="select * from persona where idpersona = '$doc' and email = '$email'"; 	
+    $email = $_POST["email"];
+
+	$sql="select * from persona where idpersona = '$doc' AND 'email' = '$email'"; 	
 	$query=mysqli_query($mysqli, $sql);
 	$fila=mysqli_fetch_assoc($query);
 	
@@ -72,7 +73,7 @@ if($_POST["inicio"])
     }  
    else
     {
-    echo '<script>alert (" El documento o el correo no existen en la Base de Datos");</script>';
+    echo '<script>alert (" El documento no exite en la Base de Datos");</script>';
     echo '<script>window.location="../validarcorreo.html"</script>';
     }
 }
