@@ -77,57 +77,57 @@ if(isset($_POST['btncerrar']))
                 </li>
     
                 <li>
-                    <a href="#">
+                    <a href="crear_estado.php">
                         <img src="img/implementar.jpg" alt="" class="imagen">
-                        <span class="text-item">OPCION 3</span>
+                        <span class="text-item">Crear Estado</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li>
-                    <a href="#">
+                    <a href="crear_especie.php">
                         <img src="img/planear.png" alt="" class="imagen">
-                        <span class="text-item">OPCION 4</span>
+                        <span class="text-item">Crear Especie</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li>
-                    <a href="#">
+                    <a href="crear_medicamento.php">
                         <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 5</span>
+                        <span class="text-item">Crear Medicamento</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
-                <li class="first-item">
+                <li class="crear_afiliacion.php">
                     <a href="#">
                         <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">OPCION 6</span>
+                        <span class="text-item">Crear Afiliación</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li>
-                    <a href="#">
+                    <a href="crear_mascota.php">
                         <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 7</span>
+                        <span class="text-item">Crear Mascota</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li>
-                    <a href="#">
+                    <a href="crear_visita.php">
                         <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 8</span>
+                        <span class="text-item">Crear Visita</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li>
-                    <a href="#">
+                    <a href="crear_historia.php">
                         <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 9</span>
+                        <span class="text-item">Crear Historia Clinica</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
