@@ -107,9 +107,9 @@ if(isset($_POST['btncerrar']))
     <link rel="stylesheet" href="estilos.css">
     <title>taller</title>
 </head>
-    <body onload="frmadd.tipousua.focus">
+    <body onload="frmadd.nom.focus">
         <section class="title">
-            <h1>Formulario de creación de usuarios <?php echo $usua['tipousua']?></h1>
+            <h1>Formulario de creación de personas <?php echo $usua['tipousua']?></h1>
         </section>
 
         <table class="centrar">
@@ -117,7 +117,7 @@ if(isset($_POST['btncerrar']))
                 
             </tr>
         
-                <td colspan="2">Tipos de usuarios</td>
+                <td colspan="2">Registro de personas</td>
                        
              
             </tr>
