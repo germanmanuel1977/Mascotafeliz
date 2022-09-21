@@ -29,12 +29,12 @@ if($_POST["inicio"]){
 		}
 		/// si es un veterinario
 		elseif($_SESSION['tipo'] == 2){
-			header("Location: ../model/funcionario/index1.php"); 
+			header("Location: ../model/veterinario/index.php"); 
 			exit();		
 		}
 		/// si es un propietario
 		if($_SESSION['tipo'] == 3){
-			header("Location: ../model/propietario/index1.php"); 
+			header("Location: ../model/propietario/index.php"); 
 			exit();
 		}
 		

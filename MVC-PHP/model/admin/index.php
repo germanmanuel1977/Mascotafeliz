@@ -116,22 +116,6 @@ if(isset($_POST['btncerrar']))
                     </a>
                 </li>
     
-                <li>
-                    <a href="crear_visita.php">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Crear Visita</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_historia.php">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Crear Historia Clinica</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
                
             </ul>
             

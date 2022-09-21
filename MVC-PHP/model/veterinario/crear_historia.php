@@ -68,14 +68,14 @@ if ($fila){
 <form method="POST">
 
     <tr>
-        <td colspan='2' align="center"><?php echo $usua['nombres']?></td>
+        <td colspan='2' align="center"><?php echo $usua['nombres']?> <?php echo $usua['apellidos']?></td>
     </tr>
 <tr><br>
     <td colspan='2' align="center">
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../admin/index.php" value="Regresar" />
+        <input type="submit" formaction="../veterinario/index.php" value="Regresar" />
     </tr>
 </form>
 

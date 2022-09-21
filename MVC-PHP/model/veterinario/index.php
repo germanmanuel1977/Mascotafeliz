@@ -12,14 +12,14 @@ $usua = mysqli_fetch_assoc($usuarios);
 <form method="POST">
 
     <tr>
-        <td colspan='2' align="center"><?php echo $usua['nombres']?></td>
+        <td colspan='2' align="center"><?php echo $usua['nombres']?> <?php echo $usua['apellidos']?></td>
     </tr>
 <tr><br>
     <td colspan='2' align="center">
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../index.php" value="Regresar" />
+
     </tr>
 </form>
 
@@ -60,61 +60,6 @@ if(isset($_POST['btncerrar']))
            
             <ul class="menu wrapper" >
     
-                <li class="first-item">
-                    <a href="crear_tipousuario.php">
-                        <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">Crear tipo de usuario</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_usuarios.php">
-                        <img src="img/ejecucion.png" alt="" class="imagen">
-                        <span class="text-item">Crear usuarios</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_estado.php">
-                        <img src="img/implementar.jpg" alt="" class="imagen">
-                        <span class="text-item">Crear Estado</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_especie.php">
-                        <img src="img/planear.png" alt="" class="imagen">
-                        <span class="text-item">Crear Especie</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_medicamento.php">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Crear Medicamento</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li class="crear_afiliacion.php">
-                    <a href="#">
-                        <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">Crear Afiliación</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_mascota.php">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Crear Mascota</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
     
                 <li>
                     <a href="crear_visita.php">

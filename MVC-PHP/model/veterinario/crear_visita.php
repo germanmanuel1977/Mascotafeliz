@@ -45,14 +45,14 @@ if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmaddvisita")){
 <form method="POST">
 
     <tr>
-        <td colspan='2' align="center"><?php echo $usua['nombres']?></td>
+        <td colspan='2' align="center"><?php echo $usua['nombres']?> <?php echo $usua['apellidos']?></td>
     </tr>
 <tr><br>
     <td colspan='2' align="center">
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../admin/index.php" value="Regresar" />
+        <input type="submit" formaction="../veterinario/index.php" value="Regresar" />
     </tr>
 </form>
 
@@ -183,7 +183,7 @@ if(isset($_POST['btncerrar']))
                         $usua1 = mysqli_fetch_assoc($tp_usu);
                         do {
                         ?>
-                        <option value="<?php echo($usua1['idpersona'])?>"><?php echo($usua1['nombres'])?> </option>
+                        <option value="<?php echo($usua1['idpersona'])?>"><?php echo($usua1['nombres'])?> <?php echo($usua1['apellidos'])?></option>
                         <?php
                         }while($usua1=mysqli_fetch_assoc($tp_usu));
                         ?>
