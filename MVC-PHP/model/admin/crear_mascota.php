@@ -105,7 +105,7 @@ if (isset($_POST['btncerrar'])) {
 
 <body onload="frmadd.tipousua.focus">
     <section class="title">
-        <h1>Formulario de creación de usuarios <?php echo $usua['tipousua'] ?></h1>
+        <h1>Formulario de creación de Mascotas <?php echo $usua['tipousua'] ?></h1>
     </section>
 
     <table class="centrar">
