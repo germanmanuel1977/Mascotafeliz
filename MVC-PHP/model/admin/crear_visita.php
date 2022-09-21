@@ -11,19 +11,6 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-
-
-$sql = "SELECT * FROM estado WHERE idestado > 2";
-$tp_usu2 = mysqli_query($mysqli,$sql);
-$usua2 = mysqli_fetch_assoc($usuarios);
-
-
-
-
-?>
-
-
-<?php
 if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmaddvisita")){
     if ($_POST['fecha']==""||$_POST['hora']==""||$_POST['temperatura']==""||$_POST['peso']==""||$_POST['frecrespiratoria']==""||$_POST['freccardiaca']==""||$_POST['recomendaciones']==""||$_POST['vrconsulta']==""||$_POST['id_persona']==""||$_POST['id_mascota']==""||$_POST['id_estado']=="")  {
     echo '<script>alert ("Existen campos vacios");</script>';
@@ -229,11 +216,14 @@ if(isset($_POST['btncerrar']))
                     <select name="id_estado">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM estado WHERE idestado > 2";
+                        $tp = mysqli_query($mysqli,$sql);
+                        $estado = mysqli_fetch_assoc($tp);
                         do {
                         ?>
-                        <option value="<?php echo($usua2['idestado'])?>"><?php echo($usua2['estado'])?>
+                        <option value="<?php echo($estado['idestado'])?>"><?php echo($estado['estado'])?>
                         <?php
-                        }while($usua2=mysqli_fetch_assoc($tp_usu2));
+                        }while($estado=mysqli_fetch_assoc($tp));
                         ?>
                     </select>
                 </td>
