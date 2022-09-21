@@ -11,52 +11,46 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-$sql = "SELECT * FROM tipousuario";
+$sql = "SELECT * FROM persona";
 $tp_usu = mysqli_query($mysqli,$sql);
 $usua1 = mysqli_fetch_assoc($usuarios);
 
-$sql = "SELECT * FROM estado WHERE estado < 3";
+$sql = "SELECT * FROM estado WHERE idestado > 2";
 $tp_usu2 = mysqli_query($mysqli,$sql);
 $usua2 = mysqli_fetch_assoc($usuarios);
+
+$sql = "SELECT * FROM mascota";
+$tp_usu3 = mysqli_query($mysqli,$sql);
+$usua3 = mysqli_fetch_assoc($usuarios);
 
 
 ?>
 
 
 <?php
-if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmadd")){
-    $tp = $_POST['doc'];
-    $sqladd="SELECT * FROM persona WHERE idpersona = '$tp' ";
-    $query = mysqli_query($mysqli,$sqladd);
-    $fila = mysqli_fetch_assoc($query);
-
-if ($fila){
-    echo '<script>alert ("El usuario ya existe");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
-    
-}elseif ($_POST['doc']==""||$_POST['nom']==""||$_POST['ape']==""||$_POST['dir']==""||$_POST['tel']==""||$_POST['email']==""||$_POST['password']==""||$_POST['tarjetaprof']=="")  {
+if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmaddvisita")){
+    if ($_POST['fecha']==""||$_POST['hora']==""||$_POST['temperatura']==""||$_POST['peso']==""||$_POST['frecrespiratoria']==""||$_POST['freccardiaca']==""||$_POST['recomendaciones']==""||$_POST['vrconsulta']==""||$_POST['id_persona']==""||$_POST['id_mascota']==""||$_POST['id_estado']=="")  {
     echo '<script>alert ("Existen campos vacios");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
+    echo '<script>window.location="crear_visita.php"</script>';
 
 }else{
-    $doc = $_POST['doc'];
-    $nombres = $_POST['nom'];
-    $apellidos = $_POST['ape'];
-    $direccion = $_POST['dir'];
-    $telefono = $_POST['tel'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $tarjetaprof = $_POST['tarjetaprof'];
-    $idtipousua = $_POST['idtipousua'];
-    $idestado = $_POST['idestado'];
+    $fecha = $_POST['fecha'];
+    $hora = $_POST['hora'];
+    $temperatura = $_POST['temperatura'];
+    $peso = $_POST['peso'];
+    $frecrespiratoria = $_POST['frecrespiratoria'];
+    $freccardiaca = $_POST['freccardiaca'];
+    $recomendaciones = $_POST['recomendaciones'];
+    $vrconsulta = $_POST['vrconsulta'];
+    $idpersona = $_POST['id_persona'];
+    $idmascota = $_POST['id_mascota'];
+    $idestado = $_POST['id_estado'];
 
 
-
-
-    $sqladd="INSERT INTO persona(idpersona, nombres, apellidos, direccion, telefono, email, password, tarjetaprof, idtipousua, idestado) VALUES ('$doc','$nombres','$apellidos','$direccion','$telefono','$email','$password','$tarjetaprof','$idtipousua','$idestado')";
+    $sqladd="INSERT INTO visita(fecha, hora, temperatura, peso, frecrespiratoria, freccardiaca, recomendaciones, vrconsulta, idpersona, idmascota, idestado) VALUES ('$fecha', '$hora', '$temperatura', '$peso', '$frecrespiratoria', '$freccardiaca', '$recomendaciones', '$vrconsulta', '$idpersona', '$idmascota', '$idestado') ";
     $query = mysqli_query($mysqli,$sqladd);
     echo '<script>alert ("Ingreso Exitoso");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
+    echo '<script>window.location="crear_visita.php"</script>';
 
 
 }
@@ -107,97 +101,121 @@ if(isset($_POST['btncerrar']))
     <link rel="stylesheet" href="estilos.css">
     <title>taller</title>
 </head>
-    <body onload="frmadd.tipousua.focus">
+    <body onload="frmaddvisita.temperatura.focus">
         <section class="title">
-            <h1>Formulario de creación de usuarios <?php echo $usua['tipousua']?></h1>
+            <h1>Formulario de creación de visitas <?php echo $usua['tipousua']?></h1>
         </section>
 
         <table class="centrar">
-            <form method="POST" name = "frmadd" autocomplete="off">
+            <form method="POST" name = "frmaddvisita" autocomplete="off">
                 
             </tr>
         
-                <td colspan="2">Tipos de usuarios</td>
+                <td colspan="2">Registro de visita</td>
                        
              
             </tr>
 
             </tr>
         
-                <td> Documento de identidad </td>
-                <td> <input type="text" name="doc" placeholder="Ingrese su documento" > </td>
+                <td> id de visita </td>
+                <td> <input type="text" readonly> </td>
                        
              
             </tr>
 
             </tr>
         
-                <td> nombres </td>
-                <td> <input type="text" name="nom" placeholder="Ingrese sus nombres" style="text-transform:uppercase"> </td>
+                <td> fecha </td>
+                <td> <input type="date" name="fecha" placeholder="Fecha de visita" style="text-transform:uppercase"> </td>
                        
              
             </tr>
 
             </tr>
         
-                <td> apellidos </td>
-                <td> <input type="text" name="ape" placeholder="Ingrese sus apellidos" style="text-transform:uppercase"> </td>
+                <td> hora </td>
+                <td> <input type="time" name="hora" placeholder="Hora de visita" style="text-transform:uppercase"> </td>
                        
              
             </tr>
 
             </tr>
         
-                <td> direccion </td>
-                <td> <input type="text" name="dir" placeholder="Ingrese su direccion" style="text-transform:uppercase"> </td>
+                <td> temperatura </td>
+                <td> <input type="number" name="temperatura" placeholder="Ingrese temperatura"> </td>
                        
              
             </tr>
 
             </tr>
         
-                <td> telefono </td>
-                <td> <input type="number" name="tel" placeholder="Ingrese su telefono"> </td>
+                <td> peso </td>
+                <td> <input type="number" name="peso" placeholder="Ingrese peso"> </td>
                        
              
             </tr>
 
             </tr>
         
-                <td> email </td>
-                <td> <input type="email" name="email" placeholder="Ingrese su email"> </td>
+                <td> frecuencia respiratoria </td>
+                <td> <input type="number" name="frecrespiratoria" placeholder="Ingrese frecuencia respiratoria"> </td>
                        
              
             </tr>
 
             </tr>
         
-                <td> password </td>
-                <td> <input type="password" name="password" placeholder="Ingrese su contraseña"> </td>
+                <td> frecuencia cardiaca </td>
+                <td> <input type="number" name="freccardiaca" placeholder="Ingrese frecuencia cardiaca"> </td>
                        
              
             </tr>
 
             </tr>
         
-                <td> tarjeta profesional </td>
-                <td> <input type="text" name="tarjetaprof" placeholder="Ingrese su número de tarjeta profesional" value="0"> </td>
+                <td> recomendaciones </td>
+                <td> <input type="text" name="recomendaciones" placeholder="Ingrese recomendaciones" style="text-transform:uppercase" > </td>
                        
              
             </tr>
 
             </tr>
         
-                <td> tipo de usuario </td>
+                <td> valor consulta </td>
+                <td> <input type="number" name="vrconsulta" placeholder="Ingrese valor de consulta" value="0"> </td>
+                       
+             
+            </tr>
+
+            </tr>
+        
+                <td> id persona </td>
                 <td>
-                    <select name="idtipousua">
+                    <select name="id_persona">
                         <option value=""> Selecciona una opción </option>
                         <?php
                         do {
                         ?>
-                        <option value="<?php echo($usua1['idtipousua'])?>"><?php echo($usua1['tipousua'])?>
+                        <option value="<?php echo($usua1['idpersona'])?>"><?php echo($usua1['nombres'])?> </option>
                         <?php
                         }while($usua1=mysqli_fetch_assoc($tp_usu));
+                        ?>
+                    </select>
+                </td>
+            </tr>
+            </tr>
+        
+                <td> id mascota </td>
+                <td>
+                    <select name="id_mascota">
+                        <option value=""> Selecciona una opción </option>
+                        <?php
+                        do {
+                        ?>
+                        <option value="<?php echo($usua3['idmascota'])?>"><?php echo($usua3['nombre'])?> </option>
+                        <?php
+                        }while($usua3=mysqli_fetch_assoc($tp_usu3));
                         ?>
                     </select>
                 </td>
@@ -206,7 +224,7 @@ if(isset($_POST['btncerrar']))
             </tr>
                 <td> estado </td>
                 <td>
-                    <select name="idestado">
+                    <select name="id_estado">
                         <option value=""> Selecciona una opción </option>
                         <?php
                         do {
@@ -229,7 +247,7 @@ if(isset($_POST['btncerrar']))
             </tr>
         
                 <td colspan="2"><input type="submit" name="btnadd" value="Guardar"> </td>
-                <input type="hidden" name="btnguardar" value="frmadd">
+                <input type="hidden" name="btnguardar" value="frmaddvisita">
                        
              
             </tr>            
