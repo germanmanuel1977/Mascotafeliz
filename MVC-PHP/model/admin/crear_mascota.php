@@ -14,23 +14,11 @@ $sql = "SELECT * FROM persona";
 $tp_usu = mysqli_query($mysqli,$sql);
 $usua1 = mysqli_fetch_assoc($usuarios);
 
-<<<<<<< HEAD
-=======
-$sql = "SELECT * FROM estado WHERE idestado > 2";
-$tp_usu2 = mysqli_query($mysqli,$sql);
-$usua2 = mysqli_fetch_assoc($usuarios);
-
-$sql = "SELECT * FROM mascota";
-$tp_usu3 = mysqli_query($mysqli,$sql);
-$usua3 = mysqli_fetch_assoc($usuarios);
-
->>>>>>> b91243ae1bbf0c4da6958e1d6b59648394631302
 
 ?>
 
 
 <?php
-<<<<<<< HEAD
 if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd")) {
     $tp = $_POST['idmascota'];
     $sqladd = "SELECT * FROM mascota WHERE idmascota = '$tp' ";
@@ -50,19 +38,6 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd")) {
         $raza = $_POST['raza'];
         $idespecie = $_POST['idespecie'];
         $idpersona = $_POST['idpersona'];
-=======
-if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmaddmascota")) {
-    if ($_POST['id_mascota'] == "" || $_POST['nom'] == "" || $_POST['color'] == "" || $_POST['raza'] == "" || $_POST['id_especie'] == "" || $_POST['id_persona'] == "") {
-        echo '<script>alert ("Existen campos vacios");</script>';
-        echo '<script>window.location="crear_mascota.php"</script>';
-    } else {
-        $idmascota = $_POST['id_mascota'];
-        $nombre = $_POST['nom'];
-        $color = $_POST['color'];
-        $raza = $_POST['raza'];
-        $idespecie = $_POST['id_especie'];
-        $idpersona = $_POST['id_persona'];
->>>>>>> b91243ae1bbf0c4da6958e1d6b59648394631302
 
         $sqladd = "INSERT INTO mascota(idmascota, nombre, color, raza, idespecie, idpersona) VALUES ('$idmascota','$nombre','$color','$raza','$idespecie','$idpersona')";
         $query = mysqli_query($mysqli, $sqladd);
@@ -166,71 +141,10 @@ if (isset($_POST['btncerrar'])) {
 
             </tr>
 
-<<<<<<< HEAD
                 <td> id especie </td>
                 <td>
                     <select name="idespecie">
                         <option value=""> Selecciona una opción </option>
-=======
-            <td> Id de especie </td>
-            <td> <input type="number" name="id_especie" placeholder="Ingrese el id de la especie"> </td>
-
-
-            </tr>
-
-            </tr>
-
-            <td> Id Persona </td>
-            <td> <input type="text" name="id_persona" placeholder="Ingrese el Id de la persona"> </td>
-
-
-            </tr>
-
-            </tr>
-            </tr>
-
-            <td> id persona </td>
-            <td>
-                <select name="id_persona">
-                    <option value=""> Selecciona una opción </option>
-                    <?php
-                    do {
-                    ?>
-                        <option value="<?php echo ($usua1['idpersona']) ?>"><?php echo ($usua1['nombres']) ?> </option>
-                    <?php
-                    } while ($usua1 = mysqli_fetch_assoc($tp_usu));
-                    ?>
-                </select>
-            </td>
-            </tr>
-            </tr>
-
-            <td> id mascota </td>
-            <td>
-                <select name="id_mascota">
-                    <option value=""> Selecciona una opción </option>
-                    <?php
-                    do {
-                    ?>
-                        <option value="<?php echo ($usua3['idmascota']) ?>"><?php echo ($usua3['nombre']) ?> </option>
-                    <?php
-                    } while ($usua3 = mysqli_fetch_assoc($tp_usu3));
-                    ?>
-                </select>
-            </td>
-            </tr>
-
-
-            </tr>
-            <td> especie </td>
-            <td>
-                <select name="id_especie">
-                    <option value=""> Selecciona una opción </option>
-                    <?php
-                    do {
-                    ?>
-                        <option value="<?php echo ($usua2['idespecie']) ?>"><?php echo ($usua2['especie']) ?>
->>>>>>> b91243ae1bbf0c4da6958e1d6b59648394631302
                         <?php
                         $sql = "SELECT * FROM especie";
                         $tp = mysqli_query($mysqli, $sql);
