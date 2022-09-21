@@ -10,50 +10,39 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-$sql = "SELECT * FROM tipousuario";
-$tp_usu = mysqli_query($mysqli, $sql);
+$sql = "SELECT * FROM persona";
+$tp_usu = mysqli_query($mysqli,$sql);
 $usua1 = mysqli_fetch_assoc($usuarios);
 
-$sql = "SELECT * FROM estado WHERE estado < 3";
-$tp_usu2 = mysqli_query($mysqli, $sql);
+$sql = "SELECT * FROM estado WHERE idestado > 2";
+$tp_usu2 = mysqli_query($mysqli,$sql);
 $usua2 = mysqli_fetch_assoc($usuarios);
+
+$sql = "SELECT * FROM mascota";
+$tp_usu3 = mysqli_query($mysqli,$sql);
+$usua3 = mysqli_fetch_assoc($usuarios);
 
 
 ?>
 
 
 <?php
-if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd")) {
-    $tp = $_POST['doc'];
-    $sqladd = "SELECT * FROM persona WHERE idpersona = '$tp' ";
-    $query = mysqli_query($mysqli, $sqladd);
-    $fila = mysqli_fetch_assoc($query);
-
-    if ($fila) {
-        echo '<script>alert ("El usuario ya existe");</script>';
-        echo '<script>window.location="usuarios.php"</script>';
-    } elseif ($_POST['doc'] == "" || $_POST['nom'] == "" || $_POST['ape'] == "" || $_POST['dir'] == "" || $_POST['tel'] == "" || $_POST['email'] == "" || $_POST['password'] == "" || $_POST['tarjetaprof'] == "") {
+if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmaddmascota")) {
+    if ($_POST['id_mascota'] == "" || $_POST['nom'] == "" || $_POST['color'] == "" || $_POST['raza'] == "" || $_POST['id_especie'] == "" || $_POST['id_persona'] == "") {
         echo '<script>alert ("Existen campos vacios");</script>';
-        echo '<script>window.location="usuarios.php"</script>';
+        echo '<script>window.location="crear_mascota.php"</script>';
     } else {
-        $doc = $_POST['doc'];
-        $nombres = $_POST['nom'];
-        $apellidos = $_POST['ape'];
-        $direccion = $_POST['dir'];
-        $telefono = $_POST['tel'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $tarjetaprof = $_POST['tarjetaprof'];
-        $idtipousua = $_POST['idtipousua'];
-        $idestado = $_POST['idestado'];
+        $idmascota = $_POST['id_mascota'];
+        $nombre = $_POST['nom'];
+        $color = $_POST['color'];
+        $raza = $_POST['raza'];
+        $idespecie = $_POST['id_especie'];
+        $idpersona = $_POST['id_persona'];
 
-
-
-
-        $sqladd = "INSERT INTO persona(idpersona, nombres, apellidos, direccion, telefono, email, password, tarjetaprof, idtipousua, idestado) VALUES ('$doc','$nombres','$apellidos','$direccion','$telefono','$email','$password','$tarjetaprof','$idtipousua','$idestado')";
+        $sqladd = "INSERT INTO mascota(idmascota, nombre, color, raza, idespecie, idpersona) VALUES ('$idmascota','$nombre','$color','$raza','$idespecie','$idpersona')";
         $query = mysqli_query($mysqli, $sqladd);
         echo '<script>alert ("Ingreso Exitoso");</script>';
-        echo '<script>window.location="usuarios.php"</script>';
+        echo '<script>window.location="crear_mascota.php"</script>';
     }
 }
 ?>
@@ -109,7 +98,7 @@ if (isset($_POST['btncerrar'])) {
     </section>
 
     <table class="centrar">
-        <form method="POST" name="frmadd" autocomplete="off">
+        <form method="POST" name="frmaddmascota" autocomplete="off">
 
             </tr>
 
@@ -153,7 +142,7 @@ if (isset($_POST['btncerrar'])) {
             </tr>
 
             <td> Id de especie </td>
-            <td> <input type="number" name="idespecie" placeholder="Ingrese el id de la especie"> </td>
+            <td> <input type="number" name="id_especie" placeholder="Ingrese el id de la especie"> </td>
 
 
             </tr>
@@ -161,7 +150,7 @@ if (isset($_POST['btncerrar'])) {
             </tr>
 
             <td> Id Persona </td>
-            <td> <input type="text" name="idpersona" placeholder="Ingrese el Id de la persona"> </td>
+            <td> <input type="text" name="id_persona" placeholder="Ingrese el Id de la persona"> </td>
 
 
             </tr>
