@@ -11,17 +11,13 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-$sql = "SELECT * FROM persona";
-$tp_usu = mysqli_query($mysqli,$sql);
-$usua1 = mysqli_fetch_assoc($usuarios);
+
 
 $sql = "SELECT * FROM estado WHERE idestado > 2";
 $tp_usu2 = mysqli_query($mysqli,$sql);
 $usua2 = mysqli_fetch_assoc($usuarios);
 
-$sql = "SELECT * FROM mascota";
-$tp_usu3 = mysqli_query($mysqli,$sql);
-$usua3 = mysqli_fetch_assoc($usuarios);
+
 
 
 ?>
@@ -195,6 +191,9 @@ if(isset($_POST['btncerrar']))
                     <select name="id_persona">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM persona WHERE idtipousua = 2";
+                        $tp_usu = mysqli_query($mysqli,$sql);
+                        $usua1 = mysqli_fetch_assoc($tp_usu);
                         do {
                         ?>
                         <option value="<?php echo($usua1['idpersona'])?>"><?php echo($usua1['nombres'])?> </option>
@@ -211,6 +210,9 @@ if(isset($_POST['btncerrar']))
                     <select name="id_mascota">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM mascota";
+                        $tp_usu3 = mysqli_query($mysqli,$sql);
+                        $usua3 = mysqli_fetch_assoc($tp_usu3);
                         do {
                         ?>
                         <option value="<?php echo($usua3['idmascota'])?>"><?php echo($usua3['nombre'])?> </option>

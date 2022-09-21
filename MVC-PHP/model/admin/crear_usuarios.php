@@ -11,13 +11,8 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-$sql = "SELECT * FROM tipousuario";
-$tp_usu = mysqli_query($mysqli,$sql);
-$usua1 = mysqli_fetch_assoc($usuarios);
 
-$sql = "SELECT * FROM estado WHERE estado < 3";
-$tp_usu2 = mysqli_query($mysqli,$sql);
-$usua2 = mysqli_fetch_assoc($usuarios);
+
 
 
 ?>
@@ -31,12 +26,12 @@ if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmadd")){
     $fila = mysqli_fetch_assoc($query);
 
 if ($fila){
-    echo '<script>alert ("El usuario ya existe");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
+    echo '<script>alert ("La persona ya esta registrada");</script>';
+    echo '<script>window.location="crear_usuarios.php"</script>';
     
-}elseif ($_POST['doc']==""||$_POST['nom']==""||$_POST['ape']==""||$_POST['dir']==""||$_POST['tel']==""||$_POST['email']==""||$_POST['password']==""||$_POST['tarjetaprof']=="")  {
+}elseif ($_POST['doc']==""||$_POST['nom']==""||$_POST['ape']==""||$_POST['dir']==""||$_POST['tel']==""||$_POST['email']==""||$_POST['password']==""||$_POST['tarjetaprof']==""||$_POST['idtipousua']==""||$_POST['idestado']=="")  {
     echo '<script>alert ("Existen campos vacios");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
+    echo '<script>window.location="crear_usuarios.php"</script>';
 
 }else{
     $doc = $_POST['doc'];
@@ -56,7 +51,7 @@ if ($fila){
     $sqladd="INSERT INTO persona(idpersona, nombres, apellidos, direccion, telefono, email, password, tarjetaprof, idtipousua, idestado) VALUES ('$doc','$nombres','$apellidos','$direccion','$telefono','$email','$password','$tarjetaprof','$idtipousua','$idestado')";
     $query = mysqli_query($mysqli,$sqladd);
     echo '<script>alert ("Ingreso Exitoso");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
+    echo '<script>window.location="crear_usuarios.php"</script>';
 
 
 }
@@ -109,7 +104,7 @@ if(isset($_POST['btncerrar']))
 </head>
     <body onload="frmadd.nom.focus">
         <section class="title">
-            <h1>Formulario de creación de personas <?php echo $usua['tipousua']?></h1>
+            <h1>Formulario de creación de usuarios <?php echo $usua['tipousua']?></h1>
         </section>
 
         <table class="centrar">
@@ -193,11 +188,15 @@ if(isset($_POST['btncerrar']))
                     <select name="idtipousua">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM tipousuario";
+                        $tp = mysqli_query($mysqli,$sql);
+                        $tipousuario = mysqli_fetch_assoc($tp);
+                        
                         do {
                         ?>
-                        <option value="<?php echo($usua1['idtipousua'])?>"><?php echo($usua1['tipousua'])?>
+                        <option value="<?php echo($tipousuario['idtipousua'])?>"><?php echo($tipousuario['tipousua'])?>
                         <?php
-                        }while($usua1=mysqli_fetch_assoc($tp_usu));
+                        }while($tipousuario=mysqli_fetch_assoc($tp));
                         ?>
                     </select>
                 </td>
@@ -209,11 +208,14 @@ if(isset($_POST['btncerrar']))
                     <select name="idestado">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM estado WHERE idestado < 3";
+                        $tp = mysqli_query($mysqli,$sql);
+                        $estado = mysqli_fetch_assoc($tp);
                         do {
                         ?>
-                        <option value="<?php echo($usua2['idestado'])?>"><?php echo($usua2['estado'])?>
+                        <option value="<?php echo($estado['idestado'])?>"><?php echo($estado['estado'])?>
                         <?php
-                        }while($usua2=mysqli_fetch_assoc($tp_usu2));
+                        }while($estado=mysqli_fetch_assoc($tp));
                         ?>
                     </select>
                 </td>

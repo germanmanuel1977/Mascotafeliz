@@ -12,25 +12,27 @@ $usua = mysqli_fetch_assoc($usuarios);
 
 <?php
 if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmadd")){
-    $tp = $_POST['tipousua'];
-    $sqladd="SELECT * FROM tipousuario WHERE tipousua = '$tp' ";
+    $tp = $_POST['especies'];
+    //SELECT e.`idespecie`, e.`especie` FROM mascotafeliz.especie e;
+    $sqladd="SELECT * FROM especie WHERE especie = '$tp' ";
     $query = mysqli_query($mysqli,$sqladd);
     $fila = mysqli_fetch_assoc($query);
 
 if ($fila){
-    echo '<script>alert ("El usuario ya existe");</script>';
-    echo '<script>window.location="agreg_usu.php"</script>';
+    echo '<script>alert ("la especie ya existe");</script>';
+    echo '<script>window.location="crear_especie.php"</script>';
     
-}elseif ($_POST['tipousua']=="") {
+}elseif ($_POST['especies']=="") {
     echo '<script>alert ("Existen campos vacios");</script>';
-    echo '<script>window.location="agreg_usu.php"</script>';
+    echo '<script>window.location="crear_especie.php"</script>';
 
 }else{
-    $tp = $_POST['tipousua'];
-    $sqladd="INSERT INTO tipousuario(tipousua) VALUES ('$tp') ";
+    $tp = $_POST['especies'];
+    //SELECT e.`idespecie`, e.`especie` FROM mascotafeliz.especie e;
+    $sqladd="INSERT INTO especie(especie) VALUES ('$tp') ";
     $query = mysqli_query($mysqli,$sqladd);
     echo '<script>alert ("Ingreso Exitoso");</script>';
-    echo '<script>window.location="agreg_usu.php"</script>';
+    echo '<script>window.location="crear_especie.php"</script>';
 
 
 }
@@ -83,7 +85,7 @@ if(isset($_POST['btncerrar']))
 </head>
     <body onload="frmadd.tipousua.focus">
         <section class="title">
-            <h1>Formulario de creación de tipos de usuarios    <?php echo $usua['tipousua']?></h1>
+            <h1>Formulario de creación de Especies    <?php echo $usua['tipousua']?></h1>
         </section>
 
         <table class="centrar">
@@ -91,7 +93,7 @@ if(isset($_POST['btncerrar']))
                 
             </tr>
         
-                <td colspan="2">Tipos de usuarios</td>
+                <td colspan="2">Tipos de especies</td>
                        
              
             </tr>
@@ -106,8 +108,8 @@ if(isset($_POST['btncerrar']))
 
             </tr>
         
-                <td> Tipo usuario </td>
-                <td> <input type="text" name="tipousua" placeholder="Ingrese tipo usuario" style="text-transform:uppercase"> </td>
+                <td> Especies </td>
+                <td> <input type="text" name="especies" placeholder="Ingrese especie" style="text-transform:uppercase"> </td>
                        
              
             </tr>

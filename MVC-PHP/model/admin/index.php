@@ -61,7 +61,7 @@ if(isset($_POST['btncerrar']))
             <ul class="menu wrapper" >
     
                 <li class="first-item">
-                    <a href="agreg_usu.php">
+                    <a href="crear_tipousuario.php">
                         <img src="img/analisis.png" alt="" class="imagen">
                         <span class="text-item">Crear tipo de usuario</span>
                         <span class="down-item"></span>
@@ -69,7 +69,7 @@ if(isset($_POST['btncerrar']))
                 </li>
     
                 <li>
-                    <a href="usuarios.php">
+                    <a href="crear_usuarios.php">
                         <img src="img/ejecucion.png" alt="" class="imagen">
                         <span class="text-item">Crear usuarios</span>
                         <span class="down-item"></span>
@@ -132,22 +132,7 @@ if(isset($_POST['btncerrar']))
                     </a>
                 </li>
     
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 10</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 11</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-                
+               
             </ul>
             
         </nav>

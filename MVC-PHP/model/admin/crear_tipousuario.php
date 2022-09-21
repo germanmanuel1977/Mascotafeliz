@@ -12,25 +12,25 @@ $usua = mysqli_fetch_assoc($usuarios);
 
 <?php
 if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmadd")){
-    $tp = $_POST['tipousua'];
+    $tp = $_POST['tipo_usuario'];
     $sqladd="SELECT * FROM tipousuario WHERE tipousua = '$tp' ";
     $query = mysqli_query($mysqli,$sqladd);
     $fila = mysqli_fetch_assoc($query);
 
 if ($fila){
-    echo '<script>alert ("El usuario ya existe");</script>';
-    echo '<script>window.location="agreg_usu.php"</script>';
+    echo '<script>alert ("El tipo de usuario ya existe");</script>';
+    echo '<script>window.location="crear_tipousuario.php"</script>';
     
-}elseif ($_POST['tipousua']=="") {
+}elseif ($_POST['tipo_usuario']=="") {
     echo '<script>alert ("Existen campos vacios");</script>';
-    echo '<script>window.location="agreg_usu.php"</script>';
+    echo '<script>window.location="crear_tipousuario.php"</script>';
 
 }else{
-    $tp = $_POST['tipousua'];
+    $tp = $_POST['tipo_usuario'];
     $sqladd="INSERT INTO tipousuario(tipousua) VALUES ('$tp') ";
     $query = mysqli_query($mysqli,$sqladd);
     echo '<script>alert ("Ingreso Exitoso");</script>';
-    echo '<script>window.location="agreg_usu.php"</script>';
+    echo '<script>window.location="crear_tipousuario.php"</script>';
 
 
 }
@@ -81,9 +81,9 @@ if(isset($_POST['btncerrar']))
     <link rel="stylesheet" href="estilos.css">
     <title>taller</title>
 </head>
-    <body onload="frmadd.tipousua.focus">
+    <body onload="frmadd.tipo_usuario.focus">
         <section class="title">
-            <h1>Formulario de creación de tipos de usuarios    <?php echo $usua['tipousua']?></h1>
+            <h1>Formulario de creación de tipos de usuarios   <?php echo $usua['tipousua']?></h1>
         </section>
 
         <table class="centrar">
@@ -106,8 +106,8 @@ if(isset($_POST['btncerrar']))
 
             </tr>
         
-                <td> Tipo usuario </td>
-                <td> <input type="text" name="tipousua" placeholder="Ingrese tipo usuario" style="text-transform:uppercase"> </td>
+                <td> Tipo de usuario </td>
+                <td> <input type="text" name="tipo_usuario" placeholder="Ingrese tipo de usuario" style="text-transform:uppercase"> </td>
                        
              
             </tr>

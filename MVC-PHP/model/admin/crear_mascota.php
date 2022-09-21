@@ -14,6 +14,8 @@ $sql = "SELECT * FROM persona";
 $tp_usu = mysqli_query($mysqli,$sql);
 $usua1 = mysqli_fetch_assoc($usuarios);
 
+<<<<<<< HEAD
+=======
 $sql = "SELECT * FROM estado WHERE idestado > 2";
 $tp_usu2 = mysqli_query($mysqli,$sql);
 $usua2 = mysqli_fetch_assoc($usuarios);
@@ -22,11 +24,33 @@ $sql = "SELECT * FROM mascota";
 $tp_usu3 = mysqli_query($mysqli,$sql);
 $usua3 = mysqli_fetch_assoc($usuarios);
 
+>>>>>>> b91243ae1bbf0c4da6958e1d6b59648394631302
 
 ?>
 
 
 <?php
+<<<<<<< HEAD
+if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd")) {
+    $tp = $_POST['idmascota'];
+    $sqladd = "SELECT * FROM mascota WHERE idmascota = '$tp' ";
+    $query = mysqli_query($mysqli, $sqladd);
+    $fila = mysqli_fetch_assoc($query);
+
+    if ($fila) {
+        echo '<script>alert ("La mascota ya existe");</script>';
+        echo '<script>window.location="crear_mascota.php"</script>';
+    } elseif ($_POST['idmascota'] == "" || $_POST['nombre'] == "" || $_POST['color'] == "" || $_POST['raza'] == "" || $_POST['idespecie'] == "" || $_POST['idpersona'] == "") {
+        echo '<script>alert ("Existen campos vacios");</script>';
+        echo '<script>window.location="crear_mascota.php"</script>';
+    } else {
+        $idmascota = $_POST['idmascota'];
+        $nombre = $_POST['nombre'];
+        $color = $_POST['color'];
+        $raza = $_POST['raza'];
+        $idespecie = $_POST['idespecie'];
+        $idpersona = $_POST['idpersona'];
+=======
 if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmaddmascota")) {
     if ($_POST['id_mascota'] == "" || $_POST['nom'] == "" || $_POST['color'] == "" || $_POST['raza'] == "" || $_POST['id_especie'] == "" || $_POST['id_persona'] == "") {
         echo '<script>alert ("Existen campos vacios");</script>';
@@ -38,6 +62,7 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmaddmascota")) 
         $raza = $_POST['raza'];
         $idespecie = $_POST['id_especie'];
         $idpersona = $_POST['id_persona'];
+>>>>>>> b91243ae1bbf0c4da6958e1d6b59648394631302
 
         $sqladd = "INSERT INTO mascota(idmascota, nombre, color, raza, idespecie, idpersona) VALUES ('$idmascota','$nombre','$color','$raza','$idespecie','$idpersona')";
         $query = mysqli_query($mysqli, $sqladd);
@@ -102,45 +127,51 @@ if (isset($_POST['btncerrar'])) {
 
             </tr>
 
-            <td colspan="2">Registro de Mascota</td>
+                <td colspan="2">Registro de Mascota</td>
 
 
             </tr>
 
             </tr>
 
-            <td> Id de Mascota</td>
-            <td> <input type="text" name="idmascota" placeholder="Ingrese el id de la Mascota"> </td>
+                <td> Id de Mascota</td>
+                <td> <input type="text" name="idmascota" placeholder="Ingrese el id de la Mascota"> </td>
 
 
             </tr>
 
             </tr>
 
-            <td> Nombre </td>
-            <td> <input type="text" name="nom" placeholder="Ingrese su nombre" style="text-transform:uppercase"> </td>
+                <td> Nombre </td>
+                <td> <input type="text" name="nombre" placeholder="Ingrese su nombre" style="text-transform:uppercase"> </td>
 
 
             </tr>
 
             </tr>
 
-            <td> Color </td>
-            <td> <input type="text" name="color" placeholder="Ingrese el color de su mascota" style="text-transform:uppercase"> </td>
+                <td> Color </td>
+                <td> <input type="text" name="color" placeholder="Ingrese el color de su mascota" style="text-transform:uppercase"> </td>
 
 
             </tr>
 
             </tr>
 
-            <td> Raza </td>
-            <td> <input type="text" name="raza" placeholder="Ingrese la raza de su mascota" style="text-transform:uppercase"> </td>
+                <td> Raza </td>
+                <td> <input type="text" name="raza" placeholder="Ingrese la raza de su mascota" style="text-transform:uppercase"> </td>
 
 
             </tr>
 
             </tr>
 
+<<<<<<< HEAD
+                <td> id especie </td>
+                <td>
+                    <select name="idespecie">
+                        <option value=""> Selecciona una opción </option>
+=======
             <td> Id de especie </td>
             <td> <input type="number" name="id_especie" placeholder="Ingrese el id de la especie"> </td>
 
@@ -199,24 +230,52 @@ if (isset($_POST['btncerrar'])) {
                     do {
                     ?>
                         <option value="<?php echo ($usua2['idespecie']) ?>"><?php echo ($usua2['especie']) ?>
+>>>>>>> b91243ae1bbf0c4da6958e1d6b59648394631302
                         <?php
-                    } while ($usua2 = mysqli_fetch_assoc($tp_usu2));
+                        $sql = "SELECT * FROM especie";
+                        $tp = mysqli_query($mysqli, $sql);
+                        $especie1 = mysqli_fetch_assoc($tp);
+                        do {
                         ?>
-                </select>
-            </td>
+                            <option value="<?php echo ($especie1['idespecie']) ?>"><?php echo ($especie1['especie']) ?> </option>
+                        <?php
+                        } while ($especie1 = mysqli_fetch_assoc($tp));
+                        ?>
+                    </select>
+                </td>
             </tr>
 
             </tr>
 
-            <td colspan="2">&nbsp; </td>
+                <td> id persona </td>
+                <td>
+                    <select name="idpersona">
+                        <option value=""> Selecciona una opción </option>
+                        <?php
+                        $sql = "SELECT * FROM persona WHERE idtipousua = 3";
+                        $tp = mysqli_query($mysqli, $sql);
+                        $persona = mysqli_fetch_assoc($tp);
+                        do {
+                        ?>
+                            <option value="<?php echo ($persona['idpersona']) ?>"><?php echo ($persona['nombres']) ?> <?php echo ($persona['apellidos']) ?> </option>
+                        <?php
+                        } while ($persona = mysqli_fetch_assoc($tp));
+                        ?>
+                    </select>
+                </td>
+            </tr>
+
+            </tr>
+
+                <td colspan="2">&nbsp; </td>
 
 
             </tr>
 
             </tr>
 
-            <td colspan="2"><input type="submit" name="btnadd" value="Guardar"> </td>
-            <input type="hidden" name="btnguardar" value="frmadd">
+                <td colspan="2"><input type="submit" name="btnadd" value="Guardar"> </td>
+                <input type="hidden" name="btnguardar" value="frmadd">
 
 
             </tr>
