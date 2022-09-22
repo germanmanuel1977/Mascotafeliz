@@ -99,10 +99,10 @@ if(isset($_POST['btncerrar']))
                     </a>
                 </li>
     
-                <li class="crear_afiliacion.php">
-                    <a href="#">
-                        <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">Crear Afiliación</span>
+                <li>
+                    <a href="crear_afiliacion.php">
+                        <img src="" alt="" class="imagen">
+                        <span class="text-item">Crear Afiliacion</span>
                         <span class="down-item"></span>
                     </a>
                 </li>

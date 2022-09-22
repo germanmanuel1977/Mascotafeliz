@@ -67,7 +67,7 @@ function centrar() {
             <tr>
                 <td>Tipo de usuario</td>
                 <td> <select name="idtipousua">
-                                <option value= "<?php echo $result['idtipousua']?>"> <?php echo $result['tipousuario']?> </option>
+                                <option value= "<?php echo $result['idtipousua']?>"> <?php echo $result['tipousua']?> </option>
                                 <?php
                                 $sql="SELECT * FROM tipousuario";
                                 $tp = mysqli_query($mysqli, $sql);
