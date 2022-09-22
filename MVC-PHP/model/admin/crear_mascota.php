@@ -53,14 +53,15 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd")) {
     <tr>
         <td colspan='2' align="center"><?php echo $usua['nombres'] ?></td>
     </tr>
+
     <tr><br>
         <td colspan='2' align="center">
-
-
-            <input type="submit" value="Cerrar sesión" name="btncerrar" />
-        </td>
-        <input type="submit" formaction="../admin/index.php" value="Regresar" />
+        
+        
+            <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
+            <input type="submit" formaction="../admin/index.php" value="Regresar" />
     </tr>
+    
 </form>
 
 <?php

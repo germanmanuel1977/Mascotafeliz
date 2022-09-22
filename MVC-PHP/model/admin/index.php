@@ -19,7 +19,6 @@ $usua = mysqli_fetch_assoc($usuarios);
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../index.php" value="Regresar" />
     </tr>
 </form>
 
@@ -115,7 +114,14 @@ if(isset($_POST['btncerrar']))
                         <span class="down-item"></span>
                     </a>
                 </li>
-    
+               
+                <li>
+                    <a href="lista_usuarios.php">
+                        <img src="" alt="" class="imagen">
+                        <span class="text-item">Consulta usuario</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>    
                
             </ul>
             

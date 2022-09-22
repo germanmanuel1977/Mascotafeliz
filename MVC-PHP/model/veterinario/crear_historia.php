@@ -11,13 +11,6 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-$sql = "SELECT * FROM tipousuario";
-$tp_usu = mysqli_query($mysqli,$sql);
-$usua1 = mysqli_fetch_assoc($usuarios);
-
-$sql = "SELECT * FROM estado WHERE estado < 3";
-$tp_usu2 = mysqli_query($mysqli,$sql);
-$usua2 = mysqli_fetch_assoc($usuarios);
 
 
 ?>
@@ -25,43 +18,21 @@ $usua2 = mysqli_fetch_assoc($usuarios);
 
 <?php
 if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmadd")){
-    $tp = $_POST['doc'];
-    $sqladd="SELECT * FROM persona WHERE idpersona = '$tp' ";
-    $query = mysqli_query($mysqli,$sqladd);
-    $fila = mysqli_fetch_assoc($query);
-
-if ($fila){
-    echo '<script>alert ("El usuario ya existe");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
+    if ($_POST['idvisita']==""||$_POST['idmedicamento']=="")  {
+        echo '<script>alert ("Existen campos vacios");</script>';
+        echo '<script>window.location="crear_historia.php"</script>';
     
-}elseif ($_POST['doc']==""||$_POST['nom']==""||$_POST['ape']==""||$_POST['dir']==""||$_POST['tel']==""||$_POST['email']==""||$_POST['password']==""||$_POST['tarjetaprof']=="")  {
-    echo '<script>alert ("Existen campos vacios");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
-
-}else{
-    $doc = $_POST['doc'];
-    $nombres = $_POST['nom'];
-    $apellidos = $_POST['ape'];
-    $direccion = $_POST['dir'];
-    $telefono = $_POST['tel'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $tarjetaprof = $_POST['tarjetaprof'];
-    $idtipousua = $_POST['idtipousua'];
-    $idestado = $_POST['idestado'];
-
-
-
-
-    $sqladd="INSERT INTO persona(idpersona, nombres, apellidos, direccion, telefono, email, password, tarjetaprof, idtipousua, idestado) VALUES ('$doc','$nombres','$apellidos','$direccion','$telefono','$email','$password','$tarjetaprof','$idtipousua','$idestado')";
+    }else{
+    $idvisita = $_POST['idvisita'];
+    $idmedicamento= $_POST['idmedicamento'];
+    $sqladd="INSERT INTO historiaclinica(idvisita, idmedicamento) VALUES ('$idvisita','$idmedicamento')";
     $query = mysqli_query($mysqli,$sqladd);
     echo '<script>alert ("Ingreso Exitoso");</script>';
-    echo '<script>window.location="usuarios.php"</script>';
+    echo '<script>window.location="crear_historia.php"</script>';
 
-
+    }
 }
 
-}
 ?>
 
 
@@ -95,9 +66,6 @@ if(isset($_POST['btncerrar']))
 
 </div>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,7 +77,7 @@ if(isset($_POST['btncerrar']))
 </head>
     <body onload="frmadd.tipousua.focus">
         <section class="title">
-            <h1>Formulario de creación de usuarios <?php echo $usua['tipousua']?></h1>
+            <h1>Formulario Creación Historia Clinica  <?php echo $usua['tipousua']?></h1>
         </section>
 
         <table class="centrar">
@@ -117,103 +85,46 @@ if(isset($_POST['btncerrar']))
                 
             </tr>
         
-                <td colspan="2">Tipos de usuarios</td>
+                <td colspan="2">Historia Clinica</td>
                        
              
             </tr>
 
-            </tr>
-        
-                <td> Documento de identidad </td>
-                <td> <input type="text" name="doc" placeholder="Ingrese su documento" > </td>
-                       
-             
-            </tr>
 
             </tr>
         
-                <td> nombres </td>
-                <td> <input type="text" name="nom" placeholder="Ingrese sus nombres" style="text-transform:uppercase"> </td>
-                       
-             
-            </tr>
-
-            </tr>
-        
-                <td> apellidos </td>
-                <td> <input type="text" name="ape" placeholder="Ingrese sus apellidos" style="text-transform:uppercase"> </td>
-                       
-             
-            </tr>
-
-            </tr>
-        
-                <td> direccion </td>
-                <td> <input type="text" name="dir" placeholder="Ingrese su direccion" style="text-transform:uppercase"> </td>
-                       
-             
-            </tr>
-
-            </tr>
-        
-                <td> telefono </td>
-                <td> <input type="number" name="tel" placeholder="Ingrese su telefono"> </td>
-                       
-             
-            </tr>
-
-            </tr>
-        
-                <td> email </td>
-                <td> <input type="email" name="email" placeholder="Ingrese su email"> </td>
-                       
-             
-            </tr>
-
-            </tr>
-        
-                <td> password </td>
-                <td> <input type="password" name="password" placeholder="Ingrese su contraseña"> </td>
-                       
-             
-            </tr>
-
-            </tr>
-        
-                <td> tarjeta profesional </td>
-                <td> <input type="text" name="tarjetaprof" placeholder="Ingrese su número de tarjeta profesional" value="0"> </td>
-                       
-             
-            </tr>
-
-            </tr>
-        
-                <td> tipo de usuario </td>
+                <td> Visita </td>
                 <td>
-                    <select name="idtipousua">
+                    <select name="idvisita">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM visita ";
+                        $tp = mysqli_query($mysqli,$sql);
+                        $visita = mysqli_fetch_assoc($tp);
                         do {
                         ?>
-                        <option value="<?php echo($usua1['idtipousua'])?>"><?php echo($usua1['tipousua'])?>
+                        <option value="<?php echo($visita['idvisita'])?>"><?php echo($visita['idvisita'])?> 
                         <?php
-                        }while($usua1=mysqli_fetch_assoc($tp_usu));
+                        }while($visita=mysqli_fetch_assoc($tp));
                         ?>
                     </select>
                 </td>
             </tr>
 
             </tr>
-                <td> estado </td>
+                <td> Medicamento </td>
                 <td>
-                    <select name="idestado">
-                        <option value=""> Selecciona una opción </option>
+                    <select name="idmedicamento">
+                        <option value=""> Selecciona una Opción </option>
                         <?php
+                        $sql = "SELECT * FROM medicamento ";
+                        $tp = mysqli_query($mysqli,$sql);
+                        $medicamento = mysqli_fetch_assoc($tp);
                         do {
                         ?>
-                        <option value="<?php echo($usua2['idestado'])?>"><?php echo($usua2['estado'])?>
+                        <option value="<?php echo($medicamento['idmedicamento'])?>"><?php echo($medicamento['medicamento'])?>
                         <?php
-                        }while($usua2=mysqli_fetch_assoc($tp_usu2));
+                        }while($medicamento=mysqli_fetch_assoc($tp));
                         ?>
                     </select>
                 </td>
