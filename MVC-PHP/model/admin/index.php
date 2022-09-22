@@ -116,9 +116,9 @@ if(isset($_POST['btncerrar']))
                 </li>
                
                 <li>
-                    <a href="lista_usuarios.php">
+                    <a href="Lista_usuarios.php">
                         <img src="" alt="" class="imagen">
-                        <span class="text-item">Consulta usuario</span>
+                        <span class="text-item">Lista usuarios</span>
                         <span class="down-item"></span>
                     </a>
                 </li>    
