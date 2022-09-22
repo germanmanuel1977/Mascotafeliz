@@ -11,23 +11,6 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-$sql = "SELECT * FROM persona";
-$tp_usu = mysqli_query($mysqli,$sql);
-$usua1 = mysqli_fetch_assoc($usuarios);
-
-$sql = "SELECT * FROM estado WHERE idestado > 2";
-$tp_usu2 = mysqli_query($mysqli,$sql);
-$usua2 = mysqli_fetch_assoc($usuarios);
-
-$sql = "SELECT * FROM mascota";
-$tp_usu3 = mysqli_query($mysqli,$sql);
-$usua3 = mysqli_fetch_assoc($usuarios);
-
-
-?>
-
-
-<?php
 if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmaddvisita")){
     if ($_POST['fecha']==""||$_POST['hora']==""||$_POST['temperatura']==""||$_POST['peso']==""||$_POST['frecrespiratoria']==""||$_POST['freccardiaca']==""||$_POST['recomendaciones']==""||$_POST['vrconsulta']==""||$_POST['id_persona']==""||$_POST['id_mascota']==""||$_POST['id_estado']=="")  {
     echo '<script>alert ("Existen campos vacios");</script>';
@@ -195,6 +178,9 @@ if(isset($_POST['btncerrar']))
                     <select name="id_persona">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM persona WHERE idtipousua = 2";
+                        $tp_usu = mysqli_query($mysqli,$sql);
+                        $usua1 = mysqli_fetch_assoc($tp_usu);
                         do {
                         ?>
                         <option value="<?php echo($usua1['idpersona'])?>"><?php echo($usua1['nombres'])?> </option>
@@ -211,6 +197,9 @@ if(isset($_POST['btncerrar']))
                     <select name="id_mascota">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM mascota";
+                        $tp_usu3 = mysqli_query($mysqli,$sql);
+                        $usua3 = mysqli_fetch_assoc($tp_usu3);
                         do {
                         ?>
                         <option value="<?php echo($usua3['idmascota'])?>"><?php echo($usua3['nombre'])?> </option>
@@ -227,11 +216,14 @@ if(isset($_POST['btncerrar']))
                     <select name="id_estado">
                         <option value=""> Selecciona una opción </option>
                         <?php
+                        $sql = "SELECT * FROM estado WHERE idestado > 2";
+                        $tp = mysqli_query($mysqli,$sql);
+                        $estado = mysqli_fetch_assoc($tp);
                         do {
                         ?>
-                        <option value="<?php echo($usua2['idestado'])?>"><?php echo($usua2['estado'])?>
+                        <option value="<?php echo($estado['idestado'])?>"><?php echo($estado['estado'])?>
                         <?php
-                        }while($usua2=mysqli_fetch_assoc($tp_usu2));
+                        }while($estado=mysqli_fetch_assoc($tp));
                         ?>
                     </select>
                 </td>
