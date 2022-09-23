@@ -2,7 +2,7 @@
 session_start();
 require_once("../../db/connection.php");
 include("../../controller/validarSesion.php"); 
-$sql="SELECT * FROM persona, tipousuario, estado WHERE persona.idtipousua = tipousuario.idtipousua AND persona.idestado = estado.idestado AND persona.idpersona = '".$_GET['id']."'";
+$sql="SELECT * FROM visita, mascota, persona, estado WHERE visita.idmascota = mascota.idmascota AND visita.idpersona = persona.idpersona AND visita.idestado = estado.idestado AND visita.idvisita = '".$_GET['id']."'";
 $query=mysqli_query($mysqli,$sql);
 $result=mysqli_fetch_assoc($query)
 ?>
@@ -10,18 +10,21 @@ $result=mysqli_fetch_assoc($query)
 <?php 
 if(isset($_POST["update"]))
 {
-    $nombres=$_POST['nombres'];
-    $apellidos=$_POST['apellidos'];
-    $direccion=$_POST['direccion'];
-    $idtipousua=$_POST['idtipousua'];
+    $fecha=$_POST['fecha'];
+    $hora=$_POST['hora'];
+    $temperatura=$_POST['temperatura'];
+    $peso=$_POST['peso'];
+    $frecrespiratoria=$_POST['frecrespiratoria'];
+    $freccardiaca=$_POST['freccardiaca'];
+    $recomendaciones=$_POST['recomendaciones'];
     $idestado=$_POST['idestado'];
-    $sql_update="UPDATE persona SET nombres = '$nombres', apellidos = '$apellidos', direccion = '$direccion', idtipousua = '$idtipousua', idestado = '$idestado'  WHERE idpersona = '".$_GET['id']."'";
+    $sql_update="UPDATE visita SET fecha = '$fecha', hora = '$hora', temperatura = '$temperatura', peso = '$peso', frecrespiratoria = '$frecrespiratoria', freccardiaca = '$freccardiaca', recomendaciones = '$recomendaciones', idestado = '$idestado' WHERE idvisita = '".$_GET['id']."'";
     $cs=mysqli_query($mysqli, $sql_update);  
    echo '<script>alert (" Actualización Exitosa ");</script>';
 }
 elseif(isset($_POST["delete"]))
 {
-    $sqldelete="DELETE FROM persona WHERE idpersona='".$_GET['id']."'";
+    $sqldelete="DELETE FROM visita WHERE idvisita ='".$_GET['id']."'";
     $cs=mysqli_query($mysqli, $sqldelete);  
    echo '<script>alert ("Registro eliminado Exitosamente ");</script>';
 }
@@ -49,36 +52,48 @@ function centrar() {
     <table>
         <form name = "consult" method="POST" autocomplete="off">
             <tr>
-                <td>Documento</td>
-                <td><input name="idpersona" value="<?php echo $result['idpersona']?>" readonly ></td>
+                <td>IdVisita</td>
+                <td><input name="idvisita" value="<?php echo $result['idvisita']?>" readonly ></td>
             </tr>
             <tr>
-                <td>Nombres</td>
-                <td><input name="nombres" value="<?php echo $result['nombres']?>"></td>
+                <td>Fecha</td>
+                <td><input type="date" name="fecha" value="<?php echo $result['fecha']?>"  ></td>
             </tr>
             <tr>
-                <td>Apellidos</td>
-                <td><input name="apellidos" value="<?php echo $result['apellidos']?>"  ></td>
+                <td>Hora</td>
+                <td><input type="time" name="hora" value="<?php echo $result['hora']?>"  ></td>
+            </tr>                        
+            <tr>
+                <td>IdMascota</td>
+                <td><input name="idmascota" value="<?php echo $result['idmascota']?>" readonly ></td>
             </tr>
             <tr>
-                <td>Direccion</td>
-                <td><input name="direccion" value="<?php echo $result['direccion']?>"></td>
+                <td>Mascota</td>
+                <td><input name="nombre" value="<?php echo $result['nombre']?>" readonly ></td>
+            </tr>                        
+            <tr>
+                <td>Veterinario</td>
+                <td><input name="veterinario" value="<?php echo $result['nombres']?> <?php echo $result['apellidos']?>" readonly ></td>
             </tr>
             <tr>
-                <td>Tipo de usuario</td>
-                <td> <select name="idtipousua">
-                                <option value= "<?php echo $result['idtipousua']?>"> <?php echo $result['tipousua']?> </option>
-                                <?php
-                                $sql="SELECT * FROM tipousuario";
-                                $tp = mysqli_query($mysqli, $sql);
-                                $tipousuario = mysqli_fetch_assoc($tp);
-                                do{ 
-                                ?>
-                                <option value= "<?php echo($tipousuario['idtipousua'])?>"><?php echo($tipousuario['tipousua'])?></option>
-                                <?php
-                                }while($tipousuario =mysqli_fetch_assoc($tp));
-                                ?>
-                            </select></td>
+                <td>Temperatura</td>
+                <td><input name="temperatura" value="<?php echo $result['temperatura']?>"  ></td>
+            </tr>
+            <tr>
+                <td>Peso</td>
+                <td><input name="peso" value="<?php echo $result['peso']?>"  ></td>
+            </tr>
+            <tr>
+                <td>Frecuencia respiratoria</td>
+                <td><input name="frecrespiratoria" value="<?php echo $result['frecrespiratoria']?>"  ></td>
+            </tr>
+            <tr>
+                <td>Frecuencia cardiaca</td>
+                <td><input name="freccardiaca" value="<?php echo $result['freccardiaca']?>"  ></td>
+            </tr>
+            <tr>
+                <td>Recomendaciones</td>
+                <td><input name="recomendaciones" value="<?php echo $result['recomendaciones']?>"  ></td>
             </tr>
             <tr>
                         <td>Estado </td>
@@ -86,7 +101,7 @@ function centrar() {
                             <select name="idestado">
                                 <option value= "<?php echo $result['idestado']?>"><?php echo $result['estado']?></option>
                                 <?php
-                                $sql="SELECT * FROM estado";
+                                $sql="SELECT * FROM estado WHERE idestado > 2";
                                 $tp = mysqli_query($mysqli, $sql);
                                 $estado = mysqli_fetch_assoc($tp);
                                 do{           

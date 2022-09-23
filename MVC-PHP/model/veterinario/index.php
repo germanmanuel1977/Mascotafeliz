@@ -63,7 +63,6 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_visita.php">
-                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear Visita</span>
                         <span class="down-item"></span>
                     </a>
@@ -71,12 +70,18 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_historia.php">
-                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear Historia Clinica</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
+                <li>
+                    <a href="Lista_visitas.php">
+                        <span class="text-item">Lista de Visitas</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>
+        
                
             </ul>
             
