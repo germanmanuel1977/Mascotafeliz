@@ -55,11 +55,11 @@ if(isset($_POST['btncerrar']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>taller</title>
+    <title>Consulta Mascota</title>
 </head>
     <body onload="frmadd.nom.focus">
         <section class="title">
-            <h1>Lista de usuarios <?php echo $usua['tipousua']?></h1>
+            <h1>Lista de Mascotas por  <?php echo $usua['tipousua']?></h1>
         </section>
 
         <table class = "centrar" border=1>
@@ -70,13 +70,14 @@ if(isset($_POST['btncerrar']))
                         <td>Nombre</td>
                         <td>Apellidos</td>
                         <td>Direccion</td>
-                        <td>Tipo de Usuario</td>
-                        <td>Estado</td>
-                        <td>Accion</td>
+                        <td>Nombre Mascota</td>
+                        <td>Color </td>
+                        <td>Raza</td>
+                        <td>Consulta</td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php
-                    $sql="SELECT * FROM persona, tipousuario, estado WHERE persona.idtipousua = tipousuario.idtipousua AND persona.idestado = estado.idestado";
+                    $sql="SELECT * FROM persona, mascota WHERE persona.idpersona = mascota.idpersona AND persona.idpersona ='".$_SESSION['usuario']."' ";
                     $i=0;
                     $query=mysqli_query($mysqli,$sql);
                     while($result=mysqli_fetch_assoc($query)){
@@ -88,8 +89,9 @@ if(isset($_POST['btncerrar']))
                         <td><?php echo $result['nombres'] ?></td>
                         <td><?php echo $result['apellidos'] ?></td>
                         <td><?php echo $result['direccion'] ?></td>
-                        <td><?php echo $result['tipousua'] ?></td>
-                        <td><?php echo $result['estado'] ?></td>
+                        <td><?php echo $result['nombre'] ?></td>
+                        <td><?php echo $result['color'] ?></td>
+                        <td><?php echo $result['raza'] ?></td>
                         <td><a href="?id=<?php echo $result['idpersona'] ?>" onclick="window.open('update.php?id=<?php echo $result['idpersona'] ?>','','width= 600,height=500, toolbar=NO');void(null);">Update/Delete</a></td>
                         <td>&nbsp;</td>
                     </tr>

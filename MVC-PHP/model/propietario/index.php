@@ -61,73 +61,73 @@ if(isset($_POST['btncerrar']))
             <ul class="menu wrapper" >
     
                 <li class="first-item">
-                    <a href="crear_tipousuario.php">
-                        <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">Crear tipo de usuario</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_usuarios.php">
-                        <img src="img/ejecucion.png" alt="" class="imagen">
-                        <span class="text-item">Crear usuarios</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_estado.php">
-                        <img src="img/implementar.jpg" alt="" class="imagen">
-                        <span class="text-item">Crear Estado</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_especie.php">
-                        <img src="img/planear.png" alt="" class="imagen">
-                        <span class="text-item">Crear Especie</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="crear_medicamento.php">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Crear Medicamento</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li class="crear_afiliacion.php">
                     <a href="#">
                         <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">Crear Afiliación</span>
+                        <span class="text-item">Item 1 </span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li>
-                    <a href="crear_mascota.php">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Crear Mascota</span>
+                    <a href="#">
+                        <img src="img/ejecucion.png" alt="" class="imagen">
+                        <span class="text-item">Item 2</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li>
-                    <a href="crear_visita.php">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Crear Visita</span>
+                    <a href="#">
+                        <img src="img/implementar.jpg" alt="" class="imagen">
+                        <span class="text-item">Item 3</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li>
-                    <a href="crear_historia.php">
+                    <a href="#">
+                        <img src="img/planear.png" alt="" class="imagen">
+                        <span class="text-item">Item 4</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#">
                         <img src="" alt="" class="imagen">
-                        <span class="text-item">Crear Historia Clinica</span>
+                        <span class="text-item">Item 5</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>
+    
+                <li class="#">
+                    <a href="#">
+                        <img src="img/analisis.png" alt="" class="imagen">
+                        <span class="text-item">Item 6</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#">
+                        <img src="" alt="" class="imagen">
+                        <span class="text-item">Item 7</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="consulta.php">
+                        <img src="" alt="" class="imagen">
+                        <span class="text-item">Consulta Mascotas</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#">
+                        <img src="" alt="" class="imagen">
+                        <span class="text-item">Item 9</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
