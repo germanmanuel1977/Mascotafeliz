@@ -2,7 +2,7 @@
 session_start();
 require_once("../../db/connection.php");
 include("../../controller/validarSesion.php"); 
-$sql="SELECT * FROM persona, tipousuario, estado WHERE persona.idtipousua = tipousuario.idtipousua AND persona.idestado = estado.idestado AND persona.idpersona = '".$_GET['id']."'";
+$sql="SELECT * FROM mascota, persona, especie WHERE mascota.idpersona = persona.idpersona AND mascota.idespecie = especie.idespecie AND mascota.idmascota = '".$_GET['id']."'";
 $query=mysqli_query($mysqli,$sql);
 $result=mysqli_fetch_assoc($query)
 ?>
@@ -10,18 +10,18 @@ $result=mysqli_fetch_assoc($query)
 <?php 
 if(isset($_POST["update"]))
 {
-    $nombres=$_POST['nombres'];
-    $apellidos=$_POST['apellidos'];
-    $direccion=$_POST['direccion'];
-    $idtipousua=$_POST['idtipousua'];
-    $idestado=$_POST['idestado'];
-    $sql_update="UPDATE persona SET nombres = '$nombres', apellidos = '$apellidos', direccion = '$direccion', idtipousua = '$idtipousua', idestado = '$idestado'  WHERE idpersona = '".$_GET['id']."'";
+    $nombre=$_POST['nombre'];
+    $color=$_POST['color'];
+    $raza=$_POST['raza'];
+    $idespecie=$_POST['idespecie'];
+    $idpersona=$_POST['idpersona'];
+    $sql_update="UPDATE mascota SET nombre = '$nombre', color = '$color', raza = '$raza', idespecie = '$idespecie', idpersona = '$idpersona'  WHERE idmascota = '".$_GET['id']."'";
     $cs=mysqli_query($mysqli, $sql_update);  
    echo '<script>alert (" Actualización Exitosa ");</script>';
 }
 elseif(isset($_POST["delete"]))
 {
-    $sqldelete="DELETE FROM persona WHERE idpersona='".$_GET['id']."'";
+    $sqldelete="DELETE FROM mascota WHERE idmascota ='".$_GET['id']."'";
     $cs=mysqli_query($mysqli, $sqldelete);  
    echo '<script>alert ("Registro eliminado Exitosamente ");</script>';
 }
@@ -49,51 +49,51 @@ function centrar() {
     <table>
         <form name = "consult" method="POST" autocomplete="off">
             <tr>
-                <td>Documento</td>
-                <td><input name="idpersona" value="<?php echo $result['idpersona']?>" readonly ></td>
+                <td>Idmascota</td>
+                <td><input name="idmascota" value="<?php echo $result['idmascota']?>" readonly ></td>
             </tr>
             <tr>
-                <td>Nombres</td>
-                <td><input name="nombres" value="<?php echo $result['nombres']?>"></td>
+                <td>Nombre</td>
+                <td><input name="nombre" value="<?php echo $result['nombre']?>"></td>
             </tr>
             <tr>
-                <td>Apellidos</td>
-                <td><input name="apellidos" value="<?php echo $result['apellidos']?>"  ></td>
+                <td>Color</td>
+                <td><input name="color" value="<?php echo $result['color']?>"  ></td>
             </tr>
             <tr>
-                <td>Direccion</td>
-                <td><input name="direccion" value="<?php echo $result['direccion']?>"></td>
+                <td>Raza</td>
+                <td><input name="raza" value="<?php echo $result['raza']?>"></td>
             </tr>
             <tr>
-                <td>Tipo de usuario</td>
-                <td> <select name="idtipousua">
-                                <option value= "<?php echo $result['idtipousua']?>"> <?php echo $result['tipousua']?> </option>
+                <td>Especie</td>
+                <td> <select name="idespecie">
+                                <option value= "<?php echo $result['idespecie']?>"> <?php echo $result['especie']?> </option>
                                 <?php
-                                $sql="SELECT * FROM tipousuario";
+                                $sql="SELECT * FROM especie";
                                 $tp = mysqli_query($mysqli, $sql);
-                                $tipousuario = mysqli_fetch_assoc($tp);
+                                $especie = mysqli_fetch_assoc($tp);
                                 do{ 
                                 ?>
-                                <option value= "<?php echo($tipousuario['idtipousua'])?>"><?php echo($tipousuario['tipousua'])?></option>
+                                <option value= "<?php echo($especie['idespecie'])?>"><?php echo($especie['especie'])?></option>
                                 <?php
-                                }while($tipousuario =mysqli_fetch_assoc($tp));
+                                }while($especie =mysqli_fetch_assoc($tp));
                                 ?>
                             </select></td>
             </tr>
             <tr>
-                        <td>Estado </td>
+                        <td>Propietario </td>
                         <td>
-                            <select name="idestado">
-                                <option value= "<?php echo $result['idestado']?>"><?php echo $result['estado']?></option>
+                            <select name="idpersona">
+                                <option value= "<?php echo $result['idpersona']?>"><?php echo $result['nombres']?> <?php echo $result['apellidos']?></option>
                                 <?php
-                                $sql="SELECT * FROM estado";
+                                $sql="SELECT * FROM persona WHERE idtipousua = 3";
                                 $tp = mysqli_query($mysqli, $sql);
-                                $estado = mysqli_fetch_assoc($tp);
+                                $persona = mysqli_fetch_assoc($tp);
                                 do{           
                                 ?>
-                                <option value= "<?php echo($estado['idestado'])?>"><?php echo($estado['estado'])?></option>
+                                <option value= "<?php echo($persona['idpersona'])?>"><?php echo($persona['nombres'])?> <?php echo($persona['apellidos'])?></option>
                                 <?php
-                                }while($estado =mysqli_fetch_assoc($tp));
+                                }while($persona =mysqli_fetch_assoc($tp));
                                 ?>
                             </select>
                         </td>

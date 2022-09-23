@@ -59,24 +59,24 @@ if(isset($_POST['btncerrar']))
 </head>
     <body onload="frmadd.nom.focus">
         <section class="title">
-            <h1>Lista de usuarios <?php echo $usua['tipousua']?></h1>
+            <h1>Lista de mascotas <?php echo $usua['tipousua']?></h1>
         </section>
 
         <table class = "centrar" border=1>
                 <form method="GET" name="frm_consulta" class = "form" autocomplete="off">
                     <tr>
                         <td>&nbsp;</td>
-                        <td>Documento</td>
+                        <td>IdMascota</td>
                         <td>Nombre</td>
-                        <td>Apellidos</td>
-                        <td>Direccion</td>
-                        <td>Tipo de Usuario</td>
-                        <td>Estado</td>
+                        <td>Color</td>
+                        <td>Raza</td>
+                        <td>Especie</td>
+                        <td>Propietario</td>
                         <td>Accion</td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php
-                    $sql="SELECT * FROM persona, tipousuario, estado WHERE persona.idtipousua = tipousuario.idtipousua AND persona.idestado = estado.idestado";
+                    $sql="SELECT * FROM mascota, persona, especie WHERE mascota.idpersona = persona.idpersona AND mascota.idespecie = especie.idespecie";
                     $i=0;
                     $query=mysqli_query($mysqli,$sql);
                     while($result=mysqli_fetch_assoc($query)){
@@ -84,13 +84,13 @@ if(isset($_POST['btncerrar']))
                     ?>
                     <tr>
                         <td><?php echo $i ?></td>
-                        <td><?php echo $result['idpersona'] ?></td>
-                        <td><?php echo $result['nombres'] ?></td>
-                        <td><?php echo $result['apellidos'] ?></td>
-                        <td><?php echo $result['direccion'] ?></td>
-                        <td><?php echo $result['tipousua'] ?></td>
-                        <td><?php echo $result['estado'] ?></td>
-                        <td><a href="?id=<?php echo $result['idpersona'] ?>" onclick="window.open('update.php?id=<?php echo $result['idpersona'] ?>','','width= 600,height=500, toolbar=NO');void(null);">Update/Delete</a></td>
+                        <td><?php echo $result['idmascota'] ?></td>
+                        <td><?php echo $result['nombre'] ?></td>
+                        <td><?php echo $result['color'] ?></td>
+                        <td><?php echo $result['raza'] ?></td>
+                        <td><?php echo $result['especie'] ?></td>
+                        <td><?php echo $result['nombres'] ?> <?php echo $result['apellidos'] ?></td>
+                        <td><a href="?id=<?php echo $result['idmascota'] ?>" onclick="window.open('update_mascotas.php?id=<?php echo $result['idmascota'] ?>','','width= 600,height=500, toolbar=NO');void(null);">Update/Delete</a></td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php } ?>

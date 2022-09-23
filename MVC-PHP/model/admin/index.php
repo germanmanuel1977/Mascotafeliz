@@ -122,7 +122,16 @@ if(isset($_POST['btncerrar']))
                         <span class="down-item"></span>
                     </a>
                 </li>    
-               
+                
+                <li>
+                    <a href="Lista_mascotas.php">
+                        <img src="" alt="" class="imagen">
+                        <span class="text-item">Lista mascotas</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>    
+                               
+
             </ul>
             
         </nav>
