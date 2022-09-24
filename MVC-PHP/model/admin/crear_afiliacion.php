@@ -93,7 +93,7 @@ if(isset($_POST['btncerrar']))
             <h1>Afiliación de Mascota <?php echo $usua['tipousua']?></h1>
         </section>
 
-        <table class="centrar">
+        <table class="centrar" border=1>
             <form method="POST" name = "frmadd" autocomplete="off">
                 
             </tr>

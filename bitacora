@@ -1,0 +1,242 @@
+commit 0204745dc605773dc6dc52d1f101797e7571bce7
+Author: aemunozv <albertoemunozv@gmail.com>
+Date:   Fri Sep 23 21:08:02 2022 -0500
+
+    Consultas historia clinica y de visitas, actaulizacion png
+
+commit 9217718c032f65ad6f33015f6ae2d651885c32a2
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Fri Sep 23 20:44:37 2022 -0500
+
+    anadirimagenes
+
+commit 94d94abda4f3182a717bc7a79ace94bb8e164373
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Fri Sep 23 20:12:21 2022 -0500
+
+    cambiodetitulostalleryborrarimagenes
+
+commit 50c0c03cdc3a08d8902cecc58280e36fe1b0339a
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Thu Sep 22 22:01:10 2022 -0500
+
+    actualizacion formularios lista visitas y update visitas
+
+commit 16a6a17547e03a6d41def05a2f5097c01d4a94eb
+Author: aemunozv <albertoemunozv@gmail.com>
+Date:   Thu Sep 22 21:02:35 2022 -0500
+
+    Primera Consulta Propietario
+
+commit 7ff6b542ca1905ac03ac6e997d1314e13ac7f3d6
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Thu Sep 22 20:14:06 2022 -0500
+
+    actualizacion formulario Lista mascotas y update mascotas
+
+commit 0d12a597eca53399e11e43ae337af40d40a2e54d
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Thu Sep 22 18:58:44 2022 -0500
+
+    creación de formularios lista mascotas, update mascotas, lista visitas, update visitas, consulta
+
+commit 3da56ec6b1c8847661b11b00c51c954ae0b05140
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Thu Sep 22 18:48:33 2022 -0500
+
+    actualizacion formularios crear afiliacion y update
+
+commit 1b8e1968292c6b8e02556072fa41ea7ad660af58
+Author: Dehiost <edwardalexissalazar@gmail.com>
+Date:   Thu Sep 22 23:29:07 2022 +0000
+
+    actualización formularios lista_usuarios, update
+
+commit 078eafbe064003c8511e22def8237870f0145eed
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Thu Sep 22 17:10:09 2022 -0500
+
+    actualización formularios lista_usuarios, update
+
+commit fbe7a2b019a765825e769bad23a25072b8706fe4
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Thu Sep 22 00:34:00 2022 -0500
+
+    actualización varios formularios
+
+commit f966ded92eee93f6f2788476cc97b80f176478af
+Merge: d72415b 4f0e8f9
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Wed Sep 21 20:01:20 2022 -0500
+
+    Merge branch 'main' of https://github.com/germanmanuel1977/NetTeamsGrupo78
+
+commit d72415b8414f34816809af161ddfa38da611f8bd
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Wed Sep 21 19:56:55 2022 -0500
+
+    codigoafiliacion
+
+commit 4f0e8f92086e280dac9042fa8575bc9bac312e60
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Wed Sep 21 16:21:13 2022 -0500
+
+    actualizacion formularios veterinario y administrador
+
+commit ae045cbc1f54ffb6b285c60929ad8314352a35f9
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Wed Sep 21 15:44:41 2022 -0500
+
+    creación carpetas veterinario y propietario, eliminación de formularios de acuerdo al tipo de usuario
+
+commit f1fbb710e721463ad539f130653e9634a01281de
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Wed Sep 21 01:07:38 2022 -0500
+
+    actualizacion formulario crear visita
+
+commit f22e2c4affc28aecac47848ff3e72cf6c648c433
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Wed Sep 21 01:02:36 2022 -0500
+
+    actualizacion formulario crear mascota
+
+commit 7d802270685f5cb41e1bb5ff80a85fa793f46bc2
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Wed Sep 21 00:47:52 2022 -0500
+
+    actualizacion varios formularios
+
+commit b91243ae1bbf0c4da6958e1d6b59648394631302
+Merge: bfaeaae 88fc94c
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Tue Sep 20 21:52:38 2022 -0500
+
+    Merge branch 'main' of https://github.com/germanmanuel1977/NetTeamsGrupo78
+
+commit bfaeaae310d90421a9b4c853936a6b83bf7248ab
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Tue Sep 20 21:49:54 2022 -0500
+
+    cambiocolorformulario
+
+commit e5cd291841223728179a58c2e97cd943e782a08c
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Tue Sep 20 21:37:43 2022 -0500
+
+    cambioafiliacion
+
+commit 88fc94cecfc6867e7b0ef7356dc620fbf7470d5a
+Author: Dehiost <edwardalexissalazar@gmail.com>
+Date:   Wed Sep 21 01:47:10 2022 +0000
+
+    Edward: modificacion 3 crear_mascota.php
+
+commit bd447f85ccb5e0f5ad13c8437fc0d050a08d8466
+Author: Dehiost <edwardalexissalazar@gmail.com>
+Date:   Wed Sep 21 01:07:47 2022 +0000
+
+    Edward: modificacion 2 crear_mascota.php
+
+commit 818939508853ccd58158a140eebde37b580438c1
+Author: Dehiost <81103628+Dehiost@users.noreply.github.com>
+Date:   Tue Sep 20 19:19:06 2022 -0500
+
+    Delete edward.txt
+
+commit ad8e2688d1c57bc643097d2898b585e3c0fa592a
+Author: Dehiost <edwardalexissalazar@gmail.com>
+Date:   Tue Sep 20 23:50:31 2022 +0000
+
+    Modificacion1 Edward crear_mascota.php
+
+commit 108e4c3e6eca37daedeb637f5bf4cc2cc570ee81
+Author: Dehiost <81103628+Dehiost@users.noreply.github.com>
+Date:   Tue Sep 20 14:02:31 2022 -0500
+
+    Delete p.txt
+
+commit f017a79052bea1f2a62905d75195bc0829eeb887
+Author: Dehiost <edwardalexissalazar@gmail.com>
+Date:   Tue Sep 20 18:44:54 2022 +0000
+
+    prueba2
+
+commit 66c797922dc9cfadf5de8133e5a3d6613b462624
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Sat Sep 17 01:53:55 2022 -0500
+
+    actualizacion formulario crear visita
+
+commit b38901eae0b3a6b5836d9e5427778366a27af1a0
+Merge: df9edb8 6ed0d74
+Author: aemunozv <albertoemunozv@gmail.com>
+Date:   Fri Sep 16 18:07:58 2022 -0500
+
+    Merge branch 'main' of https://github.com/germanmanuel1977/NetTeamsGrupo78
+
+commit 6ed0d743b75be98924a979704ef79544c339ac46
+Author: Dehiost <edwardalexissalazar@gmail.com>
+Date:   Fri Sep 16 02:14:07 2022 +0000
+
+    Prueba edward
+
+commit df9edb8e7a5d73ab9349a6062b2ef4f79fdf1253
+Author: Alberto Munoz <albertoemunoz@gmail.com>
+Date:   Thu Sep 15 21:05:05 2022 -0500
+
+    actualizacion formulario crear medicamento
+
+commit 7fec4c4738da0403f4610c58cb34c5cb68386e2f
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Thu Sep 15 20:18:33 2022 -0500
+
+    prueba2
+
+commit 345a0426382d60186fd3d78cb6004ff3d8fc8c35
+Author: Johanna Catalina Galindo P <johannacatalinagalindop@gmail.com>
+Date:   Thu Sep 15 20:06:56 2022 -0500
+
+    prueba
+
+commit efaa79bc53f97808243f67d61c1b300ffbdba7e1
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Thu Sep 15 19:31:54 2022 -0500
+
+    subida de base de datos
+
+commit 1b353e6bd59f914dbe825e3c3b1356bda41d1d2c
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Thu Sep 15 19:12:35 2022 -0500
+
+    creacion de formularios para crear tablas del proyecto
+
+commit e9eed3512c29ddac09c2180460096587ecaf8cf8
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Wed Sep 14 22:03:01 2022 -0500
+
+    cambios con base en clase del 14 de septiembre
+
+commit 0c41d104ced4ab5f12cae6a15d2ac6f6219851bf
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Wed Sep 14 19:19:04 2022 -0500
+
+    actualizacion septiembre 14
+
+commit 13093dc75da333179f3b2035e1f6e1eabe681075
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Tue Sep 13 20:07:42 2022 -0500
+
+    borrar sql
+
+commit c34175af00b102891f985784c62ebd436037a440
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Tue Sep 13 19:49:09 2022 -0500
+
+    agregar base de datos
+
+commit d2c1a9296ffa9cdbfde0dc2d07d1526c5e2a189e
+Author: germanmanuel1977 <germanmanuell@gmail.com>
+Date:   Mon Sep 12 20:07:34 2022 -0500
+
+    cargue inicial
