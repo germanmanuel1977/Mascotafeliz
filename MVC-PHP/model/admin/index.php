@@ -61,6 +61,7 @@ if(isset($_POST['btncerrar']))
     
                 <li class="first-item">
                     <a href="crear_tipousuario.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear tipo de usuario</span>
                         <span class="down-item"></span>
                     </a>
@@ -68,6 +69,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_usuarios.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear usuarios</span>
                         <span class="down-item"></span>
                     </a>
@@ -75,6 +77,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_estado.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear Estado</span>
                         <span class="down-item"></span>
                     </a>
@@ -82,6 +85,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_especie.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear Especie</span>
                         <span class="down-item"></span>
                     </a>
@@ -89,6 +93,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_medicamento.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear Medicamento</span>
                         <span class="down-item"></span>
                     </a>
@@ -96,6 +101,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_afiliacion.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear Afiliacion</span>
                         <span class="down-item"></span>
                     </a>
@@ -103,6 +109,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_mascota.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Crear Mascota</span>
                         <span class="down-item"></span>
                     </a>
@@ -110,6 +117,7 @@ if(isset($_POST['btncerrar']))
                
                 <li>
                     <a href="Lista_usuarios.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Lista usuarios</span>
                         <span class="down-item"></span>
                     </a>
@@ -117,6 +125,7 @@ if(isset($_POST['btncerrar']))
                 
                 <li>
                     <a href="Lista_mascotas.php">
+                        <img src="" alt="" class="imagen">
                         <span class="text-item">Lista mascotas</span>
                         <span class="down-item"></span>
                     </a>
