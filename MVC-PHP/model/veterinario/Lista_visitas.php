@@ -36,7 +36,7 @@ if(isset($_POST['btncerrar']))
 	session_destroy();
 
    
-    header('location: ../../index.html');
+    header('location: /netteamsgrupo78/index.html');
 }
 	
 ?>
