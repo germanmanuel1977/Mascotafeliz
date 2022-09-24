@@ -19,7 +19,7 @@ $usua = mysqli_fetch_assoc($usuarios);
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../index.php" value="Regresar" />
+        <input type="submit" formaction="../../../index.html" value="Regresar" />
     </tr>
 </form>
 
@@ -53,7 +53,7 @@ if(isset($_POST['btncerrar']))
 </head>
     <body>
         <section class="title">
-            <h1>INTERFAZ    <?php echo $usua['tipousua']?></h1>
+            <h1>INTERFAZ -->   <?php echo $usua['tipousua']?></h1>
         </section>
     
         <nav class="navegacion">
@@ -61,78 +61,26 @@ if(isset($_POST['btncerrar']))
             <ul class="menu wrapper" >
     
                 <li class="first-item">
-                    <a href="#">
+                <a href="consulta.php">
                         <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">Item 1 </span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="img/ejecucion.png" alt="" class="imagen">
-                        <span class="text-item">Item 2</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="img/implementar.jpg" alt="" class="imagen">
-                        <span class="text-item">Item 3</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="img/planear.png" alt="" class="imagen">
-                        <span class="text-item">Item 4</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Item 5</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li class="#">
-                    <a href="#">
-                        <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">Item 6</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Item 7</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="consulta.php">
-                        <img src="" alt="" class="imagen">
                         <span class="text-item">Consulta Mascotas</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
-    
                 <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">Item 9</span>
+                    <a href="visitas.php">
+                        <img src="img/portada.png" alt="" class="imagen">
+                        <span class="text-item">Consulta Visitas</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
-    
-               
+                <li>
+                    <a href="historiac.php">
+                        <img src="img/planear.png" alt="" class="imagen">
+                        <span class="text-item">Consulta Historia Clinica</span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>
             </ul>
             
         </nav>
