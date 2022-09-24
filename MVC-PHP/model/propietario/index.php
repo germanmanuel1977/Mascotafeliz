@@ -12,7 +12,8 @@ $usua = mysqli_fetch_assoc($usuarios);
 <form method="POST">
 
     <tr>
-        <td colspan='2' align="center"><?php echo $usua['nombres']?></td>
+        <td colspan='2' align="center"><?php echo $usua['nombres']?> </td>
+        <td colspan='2' align="center"><?php echo $usua['apellidos']?></td>
     </tr>
 <tr><br>
     <td colspan='2' align="center">
