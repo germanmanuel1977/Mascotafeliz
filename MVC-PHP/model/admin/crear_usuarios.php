@@ -10,13 +10,6 @@ $usua = mysqli_fetch_assoc($usuarios);
 
 ?>
 
-<?php
-
-
-
-
-?>
-
 
 <?php
 if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmadd")){
@@ -83,7 +76,7 @@ if(isset($_POST['btncerrar']))
 	session_destroy();
 
    
-    header('location: ../../index.html');
+    header('location: /netteamsgrupo78/index.html');
 }
 	
 ?>

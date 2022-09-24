@@ -36,7 +36,7 @@ if(isset($_POST['btncerrar']))
 	session_destroy();
 
    
-    header('location: ../../index.html');
+    header('location: /netteamsgrupo78/index.html');
 }
 	
 ?>
@@ -68,8 +68,11 @@ if(isset($_POST['btncerrar']))
                         <td>&nbsp;</td>
                         <td>Documento</td>
                         <td>Nombre</td>
-                        <td>Apellidos</td>
-                        <td>Direccion</td>
+                        <td>Dirección</td>
+                        <td>Teléfono</td>
+                        <td>Email</td>
+                        <td>Tarjeta profesional</td>
+                        <td>password</td>
                         <td>Tipo de Usuario</td>
                         <td>Estado</td>
                         <td>Accion</td>
@@ -85,9 +88,12 @@ if(isset($_POST['btncerrar']))
                     <tr>
                         <td><?php echo $i ?></td>
                         <td><?php echo $result['idpersona'] ?></td>
-                        <td><?php echo $result['nombres'] ?></td>
-                        <td><?php echo $result['apellidos'] ?></td>
+                        <td><?php echo $result['nombres'] ?> <?php echo $result['apellidos'] ?></td>
                         <td><?php echo $result['direccion'] ?></td>
+                        <td><?php echo $result['telefono'] ?></td>
+                        <td><?php echo $result['email'] ?></td>
+                        <td><?php echo $result['tarjetaprof'] ?></td>
+                        <td><?php echo $result['password'] ?></td>
                         <td><?php echo $result['tipousua'] ?></td>
                         <td><?php echo $result['estado'] ?></td>
                         <td><a href="?id=<?php echo $result['idpersona'] ?>" onclick="window.open('update.php?id=<?php echo $result['idpersona'] ?>','','width= 600,height=500, toolbar=NO');void(null);">Update/Delete</a></td>

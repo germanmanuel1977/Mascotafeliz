@@ -19,7 +19,6 @@ $usua = mysqli_fetch_assoc($usuarios);
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../../../index.html" value="Regresar" />
     </tr>
 </form>
 
@@ -30,7 +29,7 @@ if(isset($_POST['btncerrar']))
 	session_destroy();
 
    
-    header('location: ../../index.html');
+    header('location: /netteamsgrupo78/index.html');
 }
 	
 ?>

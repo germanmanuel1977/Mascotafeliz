@@ -13,9 +13,13 @@ if(isset($_POST["update"]))
     $nombres=$_POST['nombres'];
     $apellidos=$_POST['apellidos'];
     $direccion=$_POST['direccion'];
+    $telefono=$_POST['telefono'];
+    $email=$_POST['email'];
+    $tarjetaprof=$_POST['tarjetaprof'];
+    $password=$_POST['password'];
     $idtipousua=$_POST['idtipousua'];
     $idestado=$_POST['idestado'];
-    $sql_update="UPDATE persona SET nombres = '$nombres', apellidos = '$apellidos', direccion = '$direccion', idtipousua = '$idtipousua', idestado = '$idestado'  WHERE idpersona = '".$_GET['id']."'";
+    $sql_update="UPDATE persona SET nombres = '$nombres', apellidos = '$apellidos', direccion = '$direccion', telefono = '$telefono', email = '$email', tarjetaprof = '$tarjetaprof', password = '$password', idtipousua = '$idtipousua', idestado = '$idestado'  WHERE idpersona = '".$_GET['id']."'";
     $cs=mysqli_query($mysqli, $sql_update);  
    echo '<script>alert (" Actualización Exitosa ");</script>';
 }
@@ -61,8 +65,24 @@ function centrar() {
                 <td><input name="apellidos" value="<?php echo $result['apellidos']?>"  ></td>
             </tr>
             <tr>
-                <td>Direccion</td>
+                <td>Dirección</td>
                 <td><input name="direccion" value="<?php echo $result['direccion']?>"></td>
+            </tr>
+            <tr>
+                <td>Teléfono</td>
+                <td><input name="telefono" value="<?php echo $result['telefono']?>"></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input name="email" value="<?php echo $result['email']?>"></td>
+            </tr>
+            <tr>
+                <td>Tarjeta profesional</td>
+                <td><input name="tarjetaprof" value="<?php echo $result['tarjetaprof']?>"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input name="password" value="<?php echo $result['password']?>"></td>
             </tr>
             <tr>
                 <td>Tipo de usuario</td>
