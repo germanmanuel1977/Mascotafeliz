@@ -173,12 +173,12 @@ if(isset($_POST['btncerrar']))
 
             </tr>
         
-                <td> id persona </td>
+                <td> Veterinario </td>
                 <td>
                     <select name="id_persona">
                         <option value=""> Selecciona una opción </option>
                         <?php
-                        $sql = "SELECT * FROM persona WHERE idtipousua = 2";
+                        $sql = "SELECT * FROM persona WHERE idtipousua = 2 AND persona.idpersona = '".$_SESSION['usuario']."' ";
                         $tp_usu = mysqli_query($mysqli,$sql);
                         $usua1 = mysqli_fetch_assoc($tp_usu);
                         do {
@@ -192,7 +192,7 @@ if(isset($_POST['btncerrar']))
             </tr>
             </tr>
         
-                <td> id mascota </td>
+                <td> Nombre mascota </td>
                 <td>
                     <select name="id_mascota">
                         <option value=""> Selecciona una opción </option>

@@ -73,7 +73,6 @@ if(isset($_POST['btncerrar']))
                         <td>Nombre Mascota</td>
                         <td>Color </td>
                         <td>Raza</td>
-                        <td>Consulta</td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php
@@ -92,7 +91,6 @@ if(isset($_POST['btncerrar']))
                         <td><?php echo $result['nombre'] ?></td>
                         <td><?php echo $result['color'] ?></td>
                         <td><?php echo $result['raza'] ?></td>
-                        <td><a href="?id=<?php echo $result['idpersona'] ?>" onclick="window.open('update.php?id=<?php echo $result['idpersona'] ?>','','width= 600,height=500, toolbar=NO');void(null);">Consulta</a></td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php } ?>

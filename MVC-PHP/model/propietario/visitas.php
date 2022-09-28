@@ -76,7 +76,6 @@ if(isset($_POST['btncerrar']))
                         <td>Frec Card</td>
                         <td>Recomendaciones</td>
                         <td>Valor Consulta</td>
-                        <td>Consulta</td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php
@@ -99,7 +98,6 @@ if(isset($_POST['btncerrar']))
                         <td><?php echo $result['freccardiaca'] ?></td>
                         <td><?php echo $result['recomendaciones'] ?></td>
                         <td><?php echo $result['vrconsulta'] ?></td>
-                        <td><a href="?id=<?php echo $result['idpersona'] ?>" onclick="window.open('update.php?id=<?php echo $result['idpersona'] ?>','','width= 600,height=500, toolbar=NO');void(null);">Consulta</a></td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php } ?>

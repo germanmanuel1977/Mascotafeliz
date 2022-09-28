@@ -82,7 +82,7 @@ if(isset($_POST['btncerrar']))
                         <td>&nbsp;</td>
                     </tr>
                     <?php
-                    $sql="SELECT * FROM visita, mascota, persona, estado WHERE visita.idmascota = mascota.idmascota AND visita.idpersona = persona.idpersona AND visita.idestado = estado.idestado";
+                    $sql="SELECT * FROM visita, mascota, persona, estado WHERE visita.idmascota = mascota.idmascota AND visita.idpersona = persona.idpersona AND visita.idestado = estado.idestado AND persona.idpersona = '".$_SESSION['usuario']."' ";
                     $i=0;
                     $query=mysqli_query($mysqli,$sql);
                     while($result=mysqli_fetch_assoc($query)){

@@ -98,12 +98,12 @@ if(isset($_POST['btncerrar']))
                     <select name="idvisita">
                         <option value=""> Selecciona una opción </option>
                         <?php
-                        $sql = "SELECT * FROM visita ";
+                        $sql = "SELECT * FROM visita, mascota WHERE visita.idmascota = mascota.idmascota ";
                         $tp = mysqli_query($mysqli,$sql);
                         $visita = mysqli_fetch_assoc($tp);
                         do {
                         ?>
-                        <option value="<?php echo($visita['idvisita'])?>"><?php echo($visita['idvisita'])?> 
+                        <option value="<?php echo($visita['idvisita'])?>"><?php echo($visita['idvisita'])?> <?php echo($visita['nombre'])?>
                         <?php
                         }while($visita=mysqli_fetch_assoc($tp));
                         ?>
