@@ -17,7 +17,7 @@ if ($_POST['cont']== "" || $_POST['conta']== "" )
         $doc = $_SESSION['ced'];
         $insertSQL = "UPDATE persona SET password ='$contra'  WHERE idpersona = '$doc'";
         mysqli_query($mysqli, $insertSQL) or die(mysqli_error());  	
-             echo '<script>alert (" Cambio de Clave Existosa ");</script>';
+             echo '<script>alert (" Cambio de Clave Exitosa ");</script>';
             echo '<script>window.location="../index.html"</script>';
     
     }
@@ -31,13 +31,13 @@ if($_POST["inicio"])
 	$doc = $_POST["doc"];
     $email = $_POST["email"];
 
-	$sql="select * from persona where idpersona = '$doc' AND 'email' = '$email'"; 	
+	$sql="select * from persona where idpersona = '$doc' AND email = '$email'"; 	
 	$query=mysqli_query($mysqli, $sql);
 	$fila=mysqli_fetch_assoc($query);
 	
 	if($fila)
     {		
-		/// si el usario  son correctas.
+		/// si el usario y el correo  son correctas.
         $_SESSION['ced']=$fila['idpersona'];
     
     ?>
@@ -73,7 +73,7 @@ if($_POST["inicio"])
     }  
    else
     {
-    echo '<script>alert (" El documento no exite en la Base de Datos");</script>';
+    echo '<script>alert (" El documento y el correo no existen en la Base de Datos");</script>';
     echo '<script>window.location="../validarcorreo.html"</script>';
     }
 }
