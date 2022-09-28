@@ -61,7 +61,7 @@ if(isset($_POST['btncerrar']))
            
             <ul class="menu wrapper" >
     
-                <li class="first-item">
+                <li>
                 <a href="consulta.php">
                         <img src="img/analisis.png" alt="" class="imagen">
                         <span class="text-item">Consulta Mascotas</span>
