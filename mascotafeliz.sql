@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2022 a las 02:31:02
+-- Tiempo de generación: 29-09-2022 a las 04:34:16
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -33,6 +33,15 @@ CREATE TABLE `afiliacion` (
   `idmascota` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `afiliacion`
+--
+
+INSERT INTO `afiliacion` (`idafiliacion`, `fechaafi`, `idmascota`) VALUES
+(8, '2022-09-21', 'gato1'),
+(9, '2022-09-20', 'gato2'),
+(10, '2022-09-20', 'perro1');
+
 -- --------------------------------------------------------
 
 --
@@ -43,6 +52,15 @@ CREATE TABLE `especie` (
   `idespecie` int(3) NOT NULL,
   `especie` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `especie`
+--
+
+INSERT INTO `especie` (`idespecie`, `especie`) VALUES
+(1, 'Gato'),
+(2, 'Perro'),
+(8, 'cerdo');
 
 -- --------------------------------------------------------
 
@@ -61,7 +79,9 @@ CREATE TABLE `estado` (
 
 INSERT INTO `estado` (`idestado`, `estado`) VALUES
 (1, 'Activo'),
-(2, 'Inactivo');
+(2, 'Inactivo'),
+(3, 'Sano'),
+(4, 'Enfermo');
 
 -- --------------------------------------------------------
 
@@ -74,6 +94,18 @@ CREATE TABLE `historiaclinica` (
   `idvisita` int(11) NOT NULL,
   `idmedicamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `historiaclinica`
+--
+
+INSERT INTO `historiaclinica` (`idhistoriac`, `idvisita`, `idmedicamento`) VALUES
+(10, 22, 8),
+(11, 22, 10),
+(13, 14, 8),
+(14, 21, 9),
+(15, 18, 8),
+(16, 21, 8);
 
 -- --------------------------------------------------------
 
@@ -90,6 +122,16 @@ CREATE TABLE `mascota` (
   `idpersona` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `mascota`
+--
+
+INSERT INTO `mascota` (`idmascota`, `nombre`, `color`, `raza`, `idespecie`, `idpersona`) VALUES
+('gato1', 'Michin', 'Negro', 'Criollo', 1, '91499067'),
+('gato2', 'Tom', 'negro y blanco', 'criollo', 1, '91499064'),
+('perro1', 'Rufo', 'Marrón', 'Criollo', 2, '91499068'),
+('perro2', 'Ringo', 'Gris', 'bulldog', 2, '91499070');
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +142,16 @@ CREATE TABLE `medicamento` (
   `idmedicamento` int(11) NOT NULL,
   `medicamento` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `medicamento`
+--
+
+INSERT INTO `medicamento` (`idmedicamento`, `medicamento`) VALUES
+(8, 'Previcox'),
+(9, 'NextGard'),
+(10, 'Dragxicilina'),
+(11, 'Doxicam');
 
 -- --------------------------------------------------------
 
@@ -125,10 +177,14 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`idpersona`, `nombres`, `apellidos`, `direccion`, `telefono`, `email`, `password`, `tarjetaprof`, `idtipousua`, `idestado`) VALUES
-('1095304301', 'MIGUEL ', 'PEREZ', 'Calle 9  #3-120', '32152145654', 'miguel.perez@gmail.com', '123456789', '999999999', 2, 1),
-('91499', 'nombre1', 'apellido1', 'direccion1', '9999999', 'email@gmail.com', '123456', '1', 1, 1),
+('1095304301', 'MIGUEL', 'PEREZ', 'Calle 9  #3-120', '32152145654', 'miguel.perez@gmail.com', '123456789', '999999999', 2, 1),
 ('91499062', 'GERMAN MANUEL', 'ARGUELLO LOPEZ', 'Calle 91 #21-38', '3176366494', 'germanmanuell@gmail.com', '1234', '999999999', 1, 1),
-('91499063', 'Claudia', 'Medina', 'Carrera 27 33-25', '3172512317', 'claudia.medina@gmail.com', '12345', '', 3, 1);
+('91499063', 'Jonathan', 'Marin', 'Calle 9 3-120', '31525024052', 'jonathan.marin@gmail.com', '1234', '91499066', 2, 1),
+('91499064', 'Claudia', 'Medina', 'Carrera 27 33-25', '3172512317', 'claudia.medina@gmail.com', '1234', '', 3, 1),
+('91499067', 'Sandra', 'Bermudez', 'direccion8', 'telefono8', 'sandra.bermudez@gmail.com', '1234', '', 3, 1),
+('91499068', 'Nicol', 'Centeno', 'direccion', 'telefono', 'nicol.centeno@gmail.com', '1234', '', 3, 1),
+('91499069', 'Mariana', 'Rueda', 'direccion', '99999999', 'mariana.rueda@gmail.com', '1234', '0', 3, 1),
+('91499070', 'MIguel', 'Leal', 'Carrera 23 52-52', '3216549875', 'miguel.leal@gmail.com', '1234', '0', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -148,10 +204,7 @@ CREATE TABLE `tipousuario` (
 INSERT INTO `tipousuario` (`idtipousua`, `tipousua`) VALUES
 (1, 'Administrador'),
 (2, 'Veterinario'),
-(3, 'Propietario'),
-(8, 'Admin'),
-(9, 'Prueba'),
-(10, '');
+(3, 'Propietario');
 
 -- --------------------------------------------------------
 
@@ -173,6 +226,16 @@ CREATE TABLE `visita` (
   `idmascota` varchar(12) NOT NULL,
   `idestado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `visita`
+--
+
+INSERT INTO `visita` (`idvisita`, `fecha`, `hora`, `temperatura`, `peso`, `frecrespiratoria`, `freccardiaca`, `recomendaciones`, `vrconsulta`, `idpersona`, `idmascota`, `idestado`) VALUES
+(14, '2022-09-15', '08:00:00', '37.00', '3.00', 30, 140, 'Gato presenta inflamación del tracto urinario, micción frecuente. Se envía antibiótico', '1.00', '91499063', 'gato1', 4),
+(18, '2022-09-15', '13:39:00', '38.00', '4.00', 30, 150, 'Gato con diarrea varios días, se le envía tratamiento con gastroenteril', '1.00', '91499063', 'gato2', 4),
+(21, '2022-09-12', '13:48:00', '38.00', '8.00', 16, 100, 'Perro con moquillo, se envia tratamiento paliativo', '0.00', '91499063', 'perro1', 4),
+(22, '2022-09-20', '16:03:00', '37.00', '12.00', 14, 90, 'infeccion bacteriana, se envía tratamiento de antibiotico por 10 dias', '0.00', '91499063', 'perro2', 4);
 
 --
 -- Índices para tablas volcadas
@@ -250,43 +313,43 @@ ALTER TABLE `visita`
 -- AUTO_INCREMENT de la tabla `afiliacion`
 --
 ALTER TABLE `afiliacion`
-  MODIFY `idafiliacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idafiliacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `especie`
 --
 ALTER TABLE `especie`
-  MODIFY `idespecie` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idespecie` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
 --
 ALTER TABLE `estado`
-  MODIFY `idestado` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idestado` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `historiaclinica`
 --
 ALTER TABLE `historiaclinica`
-  MODIFY `idhistoriac` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idhistoriac` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `medicamento`
 --
 ALTER TABLE `medicamento`
-  MODIFY `idmedicamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idmedicamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `tipousuario`
 --
 ALTER TABLE `tipousuario`
-  MODIFY `idtipousua` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idtipousua` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `visita`
 --
 ALTER TABLE `visita`
-  MODIFY `idvisita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idvisita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restricciones para tablas volcadas
