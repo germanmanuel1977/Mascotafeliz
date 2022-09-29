@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="../../../controller/img/mascotafeliz.png" type="image/x-icon">
 <?php
 require_once("../db/connection.php");
 session_start();

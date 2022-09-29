@@ -40,7 +40,7 @@ if ((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]=="frmaddvisita")){
 
 }
 ?>
-
+<link rel="shortcut icon" href="../../../controller/img/mascotafeliz.png" type="image/x-icon">
 
 <form method="POST">
 

@@ -44,7 +44,7 @@ if ($fila){
 
 }
 ?>
-
+<link rel="shortcut icon" href="../../../controller/img/mascotafeliz.png" type="image/x-icon">
 
 <form method="POST">
 

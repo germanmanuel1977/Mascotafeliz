@@ -12,6 +12,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Menu Administrador</title>
+	<link rel="shortcut icon" href="../../../controller/img/mascotafeliz.png" type="image/x-icon">
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 
