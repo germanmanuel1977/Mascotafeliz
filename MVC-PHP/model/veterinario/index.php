@@ -62,7 +62,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_visita.php">
-                        <img src="img/visitas.jpg" alt="" class="imagen">
+                        <img src="img/crearvisita.svg" alt="" class="imagen">
                         <span class="text-item">Crear Visita</span>
                         <span class="down-item"></span>
                     </a>
@@ -70,7 +70,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="crear_historia.php">
-                        <img src="img/hclinica.jpg" alt="" class="imagen">
+                        <img src="img/crearhistoriaclinica.svg" alt="" class="imagen">
                         <span class="text-item">Crear Historia Clinica</span>
                         <span class="down-item"></span>
                     </a>
@@ -78,7 +78,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="Lista_visitas.php">
-                        <img src="img/lvisitas.jpg" alt="" class="imagen">
+                        <img src="img/listadevisitas.svg" alt="" class="imagen">
                         <span class="text-item">Lista de Visitas</span>
                         <span class="down-item"></span>
                     </a>

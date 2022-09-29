@@ -63,21 +63,21 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                 <a href="consulta.php">
-                        <img src="img/analisis.png" alt="" class="imagen">
+                        <img src="img/consultarmascota.svg" alt="" class="imagen">
                         <span class="text-item">Consulta Mascotas</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
                 <li>
                     <a href="visitas.php">
-                        <img src="img/portada.png" alt="" class="imagen">
+                        <img src="img/consultarvisitas.svg" alt="" class="imagen">
                         <span class="text-item">Consulta Visitas</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
                 <li>
                     <a href="historiac.php">
-                        <img src="img/planear.png" alt="" class="imagen">
+                        <img src="img/consultarhistoria.svg" alt="" class="imagen">
                         <span class="text-item">Consulta Historia Clinica</span>
                         <span class="down-item"></span>
                     </a>
