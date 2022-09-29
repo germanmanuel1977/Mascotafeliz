@@ -60,7 +60,7 @@ if(isset($_POST['btncerrar']))
            
             <ul class="menu wrapper" >
     
-                <li">
+                <li>
                     <a href="crear_tipousuario.php">
                         <img src="img/analisis.png" alt="" class="imagen">
                         <span class="text-item">Crear tipo de usuario</span>
