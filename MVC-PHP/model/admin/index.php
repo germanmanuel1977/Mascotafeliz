@@ -9,6 +9,7 @@ $usua = mysqli_fetch_assoc($usuarios);
 
 
 ?>
+<link rel="shortcut icon" href="../../../controller/img/mascotafeliz.png" type="image/x-icon">
 <form method="POST">
 
     <tr>
@@ -35,9 +36,7 @@ if(isset($_POST['btncerrar']))
 	
 ?>
 
-</div>
 
-</div>
 
 
 
@@ -45,9 +44,11 @@ if(isset($_POST['btncerrar']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="estilos.css">
     <title>Formularios Mascota Feliz</title>
 </head>
